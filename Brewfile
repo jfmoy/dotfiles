@@ -1,6 +1,7 @@
 tap "homebrew/cask-fonts"
 
 brew "autoconf"
+brew "adguard"
 brew "bat"
 brew "chezmoi"
 brew "cmake"
@@ -18,7 +19,7 @@ brew "tmux"
 brew "vim"
 brew "wget"
 brew "zola"
-brew "zsh"
+brew "zsh""
 
 cask "1password"
 cask "1password-cli"
