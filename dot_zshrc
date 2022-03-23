@@ -112,5 +112,10 @@ export PATH=$PATH:JAVA_HOME/bin
 # Brew
 export PATH=/usr/local/bin:$PATH
 
-# Podman
-alias docker=podman
+# Git
+alias gcn="git commit --no-verify"
+alias gpn="git push origin --no-verify"
+alias gfpp="git checkout develop && git fetch --prune && git pull"
+
+# AWS
+alias oktaws='saml2aws login --profile=default && eval $(saml2aws script --profile=default)'
