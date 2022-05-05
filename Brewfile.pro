@@ -3,8 +3,9 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "mongodb/brew"
-tap "versent/homebrew-taps"
-
+tap "versent/taps"
+# Automatic configure script builder
+brew "autoconf"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Manage your dotfiles across multiple diverse machines, securely
@@ -15,10 +16,14 @@ brew "cmake"
 brew "curl"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
+# Tool for managing dock items
+brew "dockutil"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Distributed revision control system
 brew "git"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Kubernetes package manager
 brew "helm"
 # Improved top (interactive process viewer)
@@ -98,6 +103,8 @@ cask "macdown"
 cask "meetingbar"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# App to write, plan, collaborate, and get organized
+cask "notion"
 # Block your own access to distracting websites
 cask "selfcontrol"
 # Instant messaging application focusing on security
