@@ -19,3 +19,6 @@ alias gfpp="git checkout develop && git fetch --prune && git pull"
 
 # AWS
 alias oktaws='saml2aws login --profile=default && eval $(saml2aws script --profile=default)'
+
+# Bat
+alias cat=bat
