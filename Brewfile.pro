@@ -4,8 +4,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "mongodb/brew"
 tap "versent/taps"
-# Automatic configure script builder
-brew "autoconf"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Manage your dotfiles across multiple diverse machines, securely
@@ -103,8 +101,6 @@ cask "macdown"
 cask "meetingbar"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# App to write, plan, collaborate, and get organized
-cask "notion"
 # Block your own access to distracting websites
 cask "selfcontrol"
 # Instant messaging application focusing on security
