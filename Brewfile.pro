@@ -99,6 +99,8 @@ cask "macdown"
 cask "meetingbar"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Block your own access to distracting websites
 cask "selfcontrol"
 # Instant messaging application focusing on security
