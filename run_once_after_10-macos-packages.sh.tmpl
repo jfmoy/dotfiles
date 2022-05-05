@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+{{ template "script_darwin_only" . }}
+{{ template "script_darwin_perso_only" . }}
+{{ template "script_no_root" . }}
+{{ template "script_brew_path" . }}
+
+cd {{ .chezmoi.sourceDir }}
+pwd
+
+{{ template "script_caffeinate" . }}
+
+set -x
+
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+brew bundle --verbose --no-upgrade --no-lock || true
+
+set +x
