@@ -5,9 +5,9 @@ set -euo pipefail
 isavailable() {
 	if [ "command -v $1" ]
 	then
-	  return 0
+	  true
 	else
-	  return 1
+	  false
 	fi
 }
 

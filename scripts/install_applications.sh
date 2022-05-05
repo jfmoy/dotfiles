@@ -5,12 +5,12 @@ DIR=$(dirname "$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)")
 . "$DIR/scripts/base.sh"
 . "$DIR/scripts/ansi"
 
+export HOMEBREW_CORE_BUNDLE_FILE="$DIR/Brewfile.core"
 export HOMEBREW_BUNDLE_FILE="$DIR/Brewfile"
-PACMAN_BUNDLE_FILE="$DIR/Pacfile"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    . "$DIR/scripts/macos_utils.sh"
-	setupCommandLineTools
+    . "$DIR/scripts/install_homebrew.sh"
+	setupBrew
 
 	ansi --green "Using $HOMEBREW_BUNDLE_FILE bundle file"
 

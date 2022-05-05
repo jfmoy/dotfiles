@@ -1,4 +1,10 @@
+# https://www.chezmoi.io/docs/how-to/#handle-configuration-files-which-are-externally-modifiedREADME.md
+LICENSE
+README.md
+.git/
+dot_git*
 Brewfile
+Brewfile.pro
+Brewfile.pro.json
 Brewfile.lock.json
-Readme.md
 scripts
