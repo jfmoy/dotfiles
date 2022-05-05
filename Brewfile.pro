@@ -14,8 +14,6 @@ brew "cmake"
 brew "curl"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
-# Tool for managing dock items
-brew "dockutil"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Distributed revision control system
