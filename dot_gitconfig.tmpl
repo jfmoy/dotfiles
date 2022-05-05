@@ -1,0 +1,61 @@
+[core]
+  preloadindex = yes
+  excludesfile = ~/.gitignore_global
+  editor = vim
+  pager = delta
+
+[pager]
+  show = delta
+  diff = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
+
+{{ if eq .chezmoi.os "darwin" }}
+[credential]
+  helper = osxkeychain
+
+[merge]
+	tool = code
+{{ else }}
+[merge]
+	tool = vim
+{{ end }}
+
+[user]
+	name = "Jean-François Moy"
+{{- if eq .darwin_pro "true" }}  
+    email = {{ .pro_email_address }}
+{{- else }}
+    email = {{ .email_address }}
+{{- end }}
+
+[diff]
+  algorithm = histogram
+  indentHeuristic = on
+
+# [commit]
+# 	gpgsign = true
+
+[pull]
+	rebase = true
+
+[push]
+  default = simple
+
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+
+[http]
+  postBuffer = 524288000

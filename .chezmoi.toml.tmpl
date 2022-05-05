@@ -1,12 +1,14 @@
 {{ $darwin_hostname := "" }}
 {{ $darwin_pro := "false" }}
 {{ $email_address := "" }}
+{{ $pro_email_address := "" }}
 
 {{ if eq .chezmoi.os "darwin" }}
 
 {{ $darwin_hostname = promptString "Hostname for macOS" }}
 {{ $darwin_pro = promptString "Pro laptop (true/false)" }}
 {{ $email_address = promptString "Email address" }}
+{{ $pro_email_address = promptString "Pro Email address" }}
 
 {{ if ne $darwin_pro "true" }}
   {{ $darwin_pro = "false" }}
@@ -19,4 +21,5 @@
   darwin_hostname = "{{ $darwin_hostname }}"
   darwin_pro = "{{ $darwin_pro }}"
   email_address = "{{ $email_address }}"
+  pro_email_address = "{{ $pro_email_address }}"
 {{ end }}
