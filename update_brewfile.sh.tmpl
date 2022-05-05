@@ -1,0 +1,14 @@
+#!/bin/bash
+set -x
+
+{{ if eq .darwin_pro "true" }}
+BREWFILE="Brewfile.pro"
+{{ else }}
+BREWFILE="Brewfile"
+{{ end }}
+
+cd {{ .chezmoi.sourceDir }}
+brew bundle dump --describe --force --file $BREWFILE
+git add $BREWFILE
+git commit -m "chore: Update $BREWFILE"
+git push
