@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# The brew package for dockutil is outdated; for the time being, we install it manually.
+
+{{ template "script_darwin_only" . }}
+{{ template "script_sudo" . }}
+{{ template "script_caffeinate" . }}
+
+set -x
+
+DLURL=$(curl --silent "https://api.github.com/repos/kcrawford/dockutil/releases/latest" | jq -r '.assets[].browser_download_url' | grep pkg)
+curl -sL ${DLURL} -o /tmp/dockutil.pkg
+sudo installer -pkg "/tmp/dockutil.pkg" -target /
+rm /tmp/dockutil.pkg
