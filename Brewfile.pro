@@ -30,6 +30,8 @@ brew "jq"
 brew "kubernetes-cli"
 # Mac App Store command-line interface
 brew "mas"
+# Node version management
+brew "n"
 # Manage multiple Node.js versions
 brew "nvm"
 # Development kit for the Java programming language
