@@ -10,6 +10,10 @@ brew "bat"
 brew "chezmoi"
 # Cross-platform make
 brew "cmake"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Container runtimes on MacOS with minimal setup
+brew "colima"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Good-lookin' diffs with diff-highlight and more
@@ -22,8 +26,6 @@ brew "docker-compose"
 brew "fzf"
 # Distributed revision control system
 brew "git"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Kubernetes package manager
 brew "helm"
 # Improved top (interactive process viewer)
@@ -40,8 +42,8 @@ brew "n"
 brew "nvm"
 # Development kit for the Java programming language
 brew "openjdk@11"
-# Tool for managing OCI containers and pods
-brew "podman"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
 # Login and retrieve AWS temporary credentials using a SAML IDP
@@ -62,6 +64,8 @@ brew "zola"
 brew "zsh"
 # An interactive JavaScript command-line interface to MongoDB
 brew "mongodb/brew/mongodb-community-shell"
+# This package contains standard utilities for interacting with MongoDB.
+brew "mongodb/brew/mongodb-database-tools"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line helper for the 1Password password manager
