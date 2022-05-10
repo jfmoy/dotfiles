@@ -14,6 +14,10 @@ brew "cmake"
 brew "curl"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Isolated development environments using Docker
+brew "docker-compose"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Distributed revision control system
@@ -74,8 +78,6 @@ cask "amethyst"
 cask "anki"
 # Application uninstaller
 cask "appcleaner"
-# Utility that prevents the system from going to sleep
-cask "caffeine"
 # Server and cloud storage browser
 cask "cyberduck"
 # API documentation browser and code snippet manager
@@ -103,6 +105,8 @@ cask "meetingbar"
 cask "ngrok"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Collaboration platform for API development
+cask "postman"
 # Block your own access to distracting websites
 cask "selfcontrol"
 # Instant messaging application focusing on security
