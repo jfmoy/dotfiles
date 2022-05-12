@@ -22,3 +22,8 @@ alias oktaws='saml2aws login --profile=default && eval $(saml2aws script --profi
 
 # Bat
 alias cat=bat
+
+# Load prezto
+if [ -d "${ZDOTDIR:-$HOME}/.zprezto" ] ; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi;
