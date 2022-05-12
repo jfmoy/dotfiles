@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+{{ template "script_darwin_only" . }}
+{{ template "script_no_root" . }}
+{{ template "script_caffeinate" . }}
+
+set -x
+
+# Install zprezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
