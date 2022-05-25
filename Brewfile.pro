@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "mongodb/brew"
+tap "phrase/brewed"
 tap "versent/taps"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
@@ -12,10 +13,12 @@ brew "chezmoi"
 brew "cmake"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
-# Container runtimes on MacOS with minimal setup
+# Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
+# General-purpose scripting language
+brew "php"
+# Dependency Manager for PHP
+brew "composer"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
 # Pack, ship and run any application as a lightweight container
@@ -66,6 +69,8 @@ brew "zsh"
 brew "mongodb/brew/mongodb-community-shell"
 # This package contains standard utilities for interacting with MongoDB.
 brew "mongodb/brew/mongodb-database-tools"
+# Phrase CLI Tool - API client binary
+brew "phrase/brewed/phrase"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line helper for the 1Password password manager
