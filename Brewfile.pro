@@ -100,8 +100,6 @@ cask "font-fira-code-nerd-font"
 cask "gimp"
 # Web browser
 cask "google-chrome"
-# Java IDE by JetBrains
-cask "intellij-idea"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # File archiver
