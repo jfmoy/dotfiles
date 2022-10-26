@@ -494,7 +494,7 @@ colors:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # at once.
-# key_bindings:
+key_bindings:
   # (Windows/Linux only)
   # - { key: V,        mods: Control,        action: Paste            }
   # - { key: C,        mods: Control,        action: Copy             }
@@ -613,6 +613,14 @@ colors:
 
 
   # Fix Alt as Meta in macOS
+  - { key: Comma,    mods: Command, command: { program: "sh", args: ["-c","open ~/.config/alacritty/alacritty.yml"] } }
+  - { key: N,        mods: Command, action: SpawnNewInstance                    }
+  - { key: Space,    mods: Alt,     chars: " "                                  }
+  - { key: Back,     mods: Super,   chars: "\x15"                               } # delete word/line
+  - { key: Left,     mods: Alt,     chars: "\x1bb"                              } # one word left
+  - { key: Right,    mods: Alt,     chars: "\x1bf"                              } # one word right
+  - { key: Left,     mods: Command, chars: "\x1bOH",   mode: AppCursor          } # Home
+  - { key: Right,    mods: Command, chars: "\x1bOF",   mode: AppCursor          } # End
   # - { key: A,         mods: Option,       chars: "\x1Ba"                       }
   # - { key: B,         mods: Option,       chars: "\x1Bb"                       }
   # - { key: C,         mods: Option,       chars: "\x1Bc"                       }
