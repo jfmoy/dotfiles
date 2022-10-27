@@ -4,17 +4,33 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "mongodb/brew"
 tap "phrase/brewed"
+tap "romkatv/powerlevel10k"
+tap "shivammathur/php"
 tap "versent/taps"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Switch Apache / Valet / CLI configs between PHP versions
+brew "brew-php-switcher"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
 # Cross-platform make
 brew "cmake"
+# Core application library for C
+brew "glib"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# Linux virtual machines
+brew "lima"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
+# Open source suite of directory software
+brew "openldap"
 # General-purpose scripting language
 brew "php"
 # Dependency Manager for PHP
@@ -45,12 +61,14 @@ brew "n"
 brew "nvm"
 # Development kit for the Java programming language
 brew "openjdk@11"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
+# Persistent key-value database, with built-in net interface
+brew "redis"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
 # Login and retrieve AWS temporary credentials using a SAML IDP
 brew "saml2aws"
+# User interface to the TELNET protocol
+brew "telnet"
 # Tool to build, change, and version infrastructure
 brew "terraform"
 # Simplified and community-driven man pages
@@ -71,6 +89,10 @@ brew "mongodb/brew/mongodb-community-shell"
 brew "mongodb/brew/mongodb-database-tools"
 # Phrase CLI Tool - API client binary
 brew "phrase/brewed/phrase"
+# A Zsh Theme
+brew "romkatv/powerlevel10k/powerlevel10k"
+# General-purpose scripting language
+brew "shivammathur/php/php@5.6"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line helper for the 1Password password manager
@@ -93,8 +115,7 @@ cask "cyberduck"
 cask "dash"
 # Databases & SQL IDE
 cask "datagrip"
-# Web browser
-cask "firefox"
+# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
 # Free and open-source image editor
 cask "gimp"
