@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "mongodb/brew"
@@ -97,8 +96,6 @@ brew "shivammathur/php/php@5.6"
 cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
-# Stand alone ad blocker
-cask "adguard"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software
