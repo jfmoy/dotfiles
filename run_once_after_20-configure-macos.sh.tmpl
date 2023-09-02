@@ -307,3 +307,9 @@ for app in "Activity Monitor" \
 	"SystemUIServer"; do
 	killall "${app}" &> /dev/null && echo "Killed ${app}"
 done
+
+
+###############################################################################
+# Copy Fonts                                                  				  #
+###############################################################################
+cp -Rf fonts/* ~/Library/Fonts

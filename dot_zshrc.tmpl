@@ -31,7 +31,14 @@ alias oktaws='saml2aws login --profile=default && eval $(saml2aws script --profi
 if [ -d "${ZDOTDIR:-$HOME}/.zprezto" ] ; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi;
+
+{{ if eq .chezmoi.arch "arm64" }}
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+{{ else }}
+source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+{{ end }}
+
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
