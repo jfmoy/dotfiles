@@ -1,9 +1,9 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "mongodb/brew"
 tap "versent/taps"
+tap "romkatv/powerlevel10k"
 
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
@@ -31,6 +31,8 @@ brew "nvm"
 brew "openjdk@11"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
+# A Zsh Theme
+brew "romkatv/powerlevel10k/powerlevel10k"
 # Simplified and community-driven man pages
 brew "tldr"
 # Terminal multiplexer
@@ -47,8 +49,6 @@ brew "zsh"
 cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
-# Stand alone ad blocker
-cask "adguard"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software
