@@ -150,6 +150,8 @@ cask "tower"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Launcher
+cask "raycast"
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
