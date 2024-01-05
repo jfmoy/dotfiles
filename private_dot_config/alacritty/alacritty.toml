@@ -1,0 +1,112 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+indexed_colors = []
+
+[colors.bright]
+black = "0x4d4d4d"
+blue = "0xcaa9fa"
+cyan = "0x9aedfe"
+green = "0x5af78e"
+magenta = "0xff92d0"
+red = "0xff6e67"
+white = "0xe6e6e6"
+yellow = "0xf4f99d"
+
+[colors.cursor]
+cursor = "0xf8f8f2"
+text = "0x44475a"
+
+[colors.dim]
+black = "0x14151b"
+blue = "0x4d5b86"
+cyan = "0x59dffc"
+green = "0x1ef956"
+magenta = "0xff46b0"
+red = "0xff2222"
+white = "0xe6e6d1"
+yellow = "0xebf85b"
+
+[colors.normal]
+black = "0x000000"
+blue = "0xbd93f9"
+cyan = "0x8be9fd"
+green = "0x50fa7b"
+magenta = "0xff79c6"
+red = "0xff5555"
+white = "0xbfbfbf"
+yellow = "0xf1fa8c"
+
+[colors.primary]
+background = "0x282a36"
+foreground = "0xf8f8f2"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[[keyboard.bindings]]
+key = "Comma"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["-c", "open ~/.config/alacritty/alacritty.yml"]
+program = "sh"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = " "
+key = "Space"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "Back"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Left"
+mode = "AppCursor"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "Right"
+mode = "AppCursor"
+mods = "Command"
+
+[window.dimensions]
+columns = 100
+lines = 30
