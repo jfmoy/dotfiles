@@ -92,6 +92,8 @@ brew "phrase/brewed/phrase"
 brew "romkatv/powerlevel10k/powerlevel10k"
 # General-purpose scripting language
 brew "shivammathur/php/php@5.6"
+# Powerlevel 10k
+brew "powerlevel10k"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line helper for the 1Password password manager
