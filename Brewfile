@@ -110,6 +110,8 @@ cask "visual-studio-code"
 cask "vlc"
 # Launcher
 cask "raycast"
+# LogSeq
+cask "logseq"
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
