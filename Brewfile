@@ -45,6 +45,8 @@ brew "wget"
 brew "zola"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Powerlevel 10k
+brew "powerlevel10k"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line helper for the 1Password password manager
