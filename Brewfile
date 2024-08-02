@@ -25,6 +25,8 @@ brew "htop"
 brew "jq"
 # Mac App Store command-line interface
 brew "mas"
+# Neovim
+brew "neovim"
 # Manage multiple Node.js versions
 brew "nvm"
 # Development kit for the Java programming language
@@ -61,6 +63,8 @@ cask "amethyst"
 cask "anki"
 # Application uninstaller
 cask "appcleaner"
+# Arc browser
+cask "arc"
 # Utility that prevents the system from going to sleep
 cask "caffeine"
 # Server and cloud storage browser

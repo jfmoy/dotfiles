@@ -56,6 +56,8 @@ brew "kubernetes-cli"
 brew "mas"
 # Node version management
 brew "n"
+# Neovim
+brew "neovim"
 # Manage multiple Node.js versions
 brew "nvm"
 # Development kit for the Java programming language
@@ -108,6 +110,8 @@ cask "amethyst"
 cask "anki"
 # Application uninstaller
 cask "appcleaner"
+# Arc Browser
+cask "arc"
 # Server and cloud storage browser
 cask "cyberduck"
 # API documentation browser and code snippet manager
@@ -120,6 +124,8 @@ cask "font-fira-code-nerd-font"
 cask "gimp"
 # Web browser
 cask "google-chrome"
+# IDE
+cask "intellij-idea"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # File archiver
