@@ -118,6 +118,8 @@ cask "cyberduck"
 cask "dash"
 # Databases & SQL IDE
 cask "datagrip"
+# Web Browser
+cask "firefox"
 # Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
 # Free and open-source image editor
