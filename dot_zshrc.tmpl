@@ -49,3 +49,8 @@ source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # PHP Version Switcher
 source ~/.local/scripts/switch_php_version.sh
+
+# Golang
+if command -v go &> /dev/null; then
+  export PATH=$PATH:$(go env GOPATH)/bin
+fi
