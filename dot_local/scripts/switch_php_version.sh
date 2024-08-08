@@ -17,10 +17,14 @@ switch_php_version() {
 
    # Remove any existing PHP paths from .zshrc
    sed -i '' '/\/opt\/homebrew\/opt\/php@/d' ~/.zshrc
-
-   # Add new PHP version to PATH in .zshrc
+ 
+   {{ if eq .chezmoi.arch "arm64" }}
    echo "export PATH=\"/opt/homebrew/opt/php@$version/bin:\$PATH\"" >>~/.zshrc
    echo "export PATH=\"/opt/homebrew/opt/php@$version/sbin:\$PATH\"" >>~/.zshrc
+   {{ else }}
+   echo "export PATH=\"/usr/local/opt/php@$version/bin:\$PATH\"" >>~/.zshrc
+   echo "export PATH=\"/usr/local/opt/php@$version/sbin:\$PATH\"" >>~/.zshrc
+   {{ end }}
 
    # Reload .zshrc to apply changes immediately
    source ~/.zshrc
