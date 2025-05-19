@@ -5,8 +5,7 @@ DIR=$(dirname "$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)")
 . "$DIR/scripts/base.sh"
 . "$DIR/scripts/ansi"
 
-export HOMEBREW_CORE_BUNDLE_FILE="$DIR/Brewfile.core"
-export HOMEBREW_BUNDLE_FILE="$DIR/Brewfile"
+export HOMEBREW_BUNDLE_FILE=~/.config/darwin/Brewfile
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     . "$DIR/scripts/install_homebrew.sh"
