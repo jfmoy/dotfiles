@@ -102,20 +102,14 @@ cask "1password"
 cask "1password-cli"
 # GPU-accelerated terminal emulator
 cask "alacritty"
-# Application launcher and productivity software
-cask "alfred"
 # Automatic tiling window manager similar to xmonad
 cask "amethyst"
 # Memory training application
 cask "anki"
 # Application uninstaller
 cask "appcleaner"
-# Arc Browser
-cask "arc"
 # Server and cloud storage browser
 cask "cyberduck"
-# API documentation browser and code snippet manager
-cask "dash"
 # Databases & SQL IDE
 cask "datagrip"
 # Web Browser
@@ -124,8 +118,6 @@ cask "firefox"
 cask "font-fira-code-nerd-font"
 # Free and open-source image editor
 cask "gimp"
-# Web browser
-cask "google-chrome"
 # IDE
 cask "intellij-idea"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -156,6 +148,8 @@ cask "textual"
 cask "the-unarchiver"
 # Git client focusing on power and productivity
 cask "tower"
+# Web Browser
+cask "vivaldi"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
@@ -163,7 +157,9 @@ cask "vlc"
 # Launcher
 cask "raycast"
 # LogSeq
-cask "logseq"
+cask "obsidian"
+# Web Browser
+cask "zen"
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
