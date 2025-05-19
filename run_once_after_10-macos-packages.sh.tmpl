@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 {{ template "script_darwin_only" . }}
-{{ template "script_darwin_perso_only" . }}
 {{ template "script_no_root" . }}
 {{ template "script_brew_path" . }}
 
@@ -20,16 +19,7 @@ brew upgrade
 
 # Apply common Brewfile
 echo "Applying common packages..."
-brew bundle --verbose --file=Brewfile.common --greedy || true
-
-# Apply specific Brewfile based on machine type
-if [ "{{ .proMachine }}" = "true" ]; then
-    echo "Applying pro-specific packages..."
-    brew bundle --verbose --file=Brewfile.pro --greedy || true
-else
-    echo "Applying home-specific packages..."
-    brew bundle --verbose --file=Brewfile --greedy || true
-fi
+brew bundle --verbose --file=~/.config/darwin/Brewfile || true
 
 # Clean up old versions and cache
 echo "Cleaning up..."

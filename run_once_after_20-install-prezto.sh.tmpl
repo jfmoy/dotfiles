@@ -6,5 +6,13 @@
 
 set -x
 
-# Install zprezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+PREZTO_DIR="${ZDOTDIR:-$HOME}/.zprezto"
+
+if [ ! -d "$PREZTO_DIR" ]; then
+  # Install zprezto if not already present
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "$PREZTO_DIR"
+else
+  # If prezto is already installed, update it
+  echo "Prezto already installed at $PREZTO_DIR"
+  cd "$PREZTO_DIR" && git pull || true
+fi
