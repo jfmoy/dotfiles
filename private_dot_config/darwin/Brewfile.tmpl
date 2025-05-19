@@ -1,0 +1,176 @@
+# MongoDB Homebrew Tap
+tap "mongodb/brew"
+# Versent Homebrew Tap
+tap "versent/taps"
+
+# Common CLI tools
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat", greedy: true
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi", greedy: true
+# Cross-platform make
+brew "cmake", greedy: true
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl", greedy: true
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy", greedy: true
+# Allow managing Dock entries
+brew "dockutil", greedy: true
+# Command-line fuzzy finder written in Go
+brew "fzf", greedy: true
+# Distributed revision control system
+brew "git", greedy: true
+# Improved top (interactive process viewer)
+brew "htop", greedy: true
+# Lightweight and flexible command-line JSON processor
+brew "jq", greedy: true
+# Mac App Store command-line interface
+brew "mas", greedy: true
+# Vim-fork focused on extensibility and usability
+brew "neovim", greedy: true
+# Manage multiple Node.js versions
+brew "nvm", greedy: true
+# Perl-powered file rename script with many helpful built-ins
+brew "rename", greedy: true
+# Simplified and community-driven man pages
+brew "tldr", greedy: true
+# Power-user shell
+brew "starship", greedy: true
+# Terminal multiplexer
+brew "tmux", greedy: true
+# Vi 'workalike' with many additional features
+brew "vim", greedy: true
+# Internet file retriever
+brew "wget", greedy: true
+# UNIX shell (command interpreter)
+brew "zsh", greedy: true
+
+# Common casks
+# Password manager that keeps all passwords secure behind one password
+cask "1password", greedy: true
+# Command-line helper for the 1Password password manager
+cask "1password-cli", greedy: true
+# GPU-accelerated terminal emulator
+cask "alacritty", greedy: true
+# Automatic tiling window manager similar to xmonad
+cask "amethyst", greedy: true
+# Memory training application
+cask "anki", greedy: true
+# Application uninstaller
+cask "appcleaner", greedy: true
+# Server and cloud storage browser
+cask "cyberduck", greedy: true
+# Web browser
+cask "firefox", greedy: true
+# Developer targeted fonts with a high number of glyphs
+cask "font-fira-code-nerd-font", greedy: true
+# Free and open-source image editor
+cask "gimp", greedy: true
+# File archiver
+cask "keka", greedy: true
+# Open-source Markdown editor
+cask "macdown", greedy: true
+# Shows the next meeting in the menu bar
+cask "meetingbar", greedy: true
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok", greedy: true
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian", greedy: true
+# Launcher
+cask "raycast", greedy: true
+# Block your own access to distracting websites
+cask "selfcontrol", greedy: true
+# Instant messaging application focusing on security
+cask "signal", greedy: true
+# Team communication and collaboration software
+cask "slack", greedy: true
+# Unpacks archive files
+cask "the-unarchiver", greedy: true
+# Git client focusing on power and productivity
+cask "tower", greedy: true
+# Open-source code editor
+cask "visual-studio-code", greedy: true
+# Web browser
+cask "vivaldi", greedy: true
+# Multimedia player
+cask "vlc", greedy: true
+# Web browser
+cask "zen", greedy: true
+
+# Common Mac App Store apps
+# Keep your Mac awake
+mas "Amphetamine", id: 937984704
+# Video editing software
+mas "iMovie", id: 408981434
+# Presentation software
+mas "Keynote", id: 409183694
+# Spreadsheet software
+mas "Numbers", id: 409203825
+# Word processor
+mas "Pages", id: 409201541 
+
+
+{{- if .proMachine -}}
+# Phrase Homebrew Tap
+tap "phrase/brewed"
+# PHP Homebrew Tap
+tap "shivammathur/php"
+
+# Pro-specific CLI tools
+# Official Amazon AWS command-line interface
+brew "awscli", greedy: true
+# Switch Apache / Valet / CLI configs between PHP versions
+brew "brew-php-switcher", greedy: true
+# Core application library for C
+brew "glib", greedy: true
+# Validating, recursive, caching DNS resolver
+brew "unbound", greedy: true
+# Open source suite of directory software
+brew "openldap", greedy: true
+# General-purpose scripting language
+brew "php", greedy: true
+# Dependency Manager for PHP
+brew "composer", greedy: true
+# Pack, ship and run any application as a lightweight container
+brew "docker", greedy: true
+# Isolated development environments using Docker
+brew "docker-compose", greedy: true
+# Kubernetes package manager
+brew "helm", greedy: true
+# Kubernetes command-line interface
+brew "kubernetes-cli", greedy: true
+# Node version management
+brew "n", greedy: true
+# Persistent key-value database, with built-in net interface
+brew "redis", greedy: true
+# Login and retrieve AWS temporary credentials using a SAML IDP
+brew "saml2aws", greedy: true
+# User interface to the TELNET protocol
+brew "telnet", greedy: true
+# Tool to build, change, and version infrastructure
+brew "terraform", greedy: true
+# An interactive JavaScript command-line interface to MongoDB
+brew "mongodb/brew/mongodb-community-shell", greedy: true
+# Standard utilities for interacting with MongoDB
+brew "mongodb/brew/mongodb-database-tools", greedy: true
+# Phrase CLI Tool - API client binary
+brew "phrase/brewed/phrase", greedy: true
+
+# Databases & SQL IDE
+cask "datagrip", greedy: true
+# Java IDE by JetBrains
+cask "intellij-idea", greedy: true
+
+{{ else }}
+# Fast static site generator in a single binary with everything built-in
+brew "zola"
+
+# Voice and text chat software
+cask "discord", greedy: true
+# VPN service
+cask "private-internet-access", greedy: true
+# Application for interacting with Internet Relay Chat (IRC) chatrooms
+cask "textual", greedy: true
+{{- end -}}
+
+
