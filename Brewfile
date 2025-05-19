@@ -94,6 +94,8 @@ cask "meetingbar"
 cask "ngrok"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Launcher
+cask "raycast"
 # Block your own access to distracting websites
 cask "selfcontrol"
 # Instant messaging application focusing on security
@@ -110,12 +112,13 @@ cask "the-unarchiver"
 cask "tower"
 # Open-source code editor
 cask "visual-studio-code"
+# Web browser
+cask "vivaldi"
 # Multimedia player
 cask "vlc"
-# Launcher
-cask "raycast"
-# LogSeq
-cask "logseq"
+# Web browser
+cask "zen"
+
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
