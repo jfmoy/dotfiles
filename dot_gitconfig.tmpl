@@ -32,11 +32,11 @@
 {{ end }}
 
 [user]
-	name = "Jean-François Moy"
-{{- if eq .darwin_pro "true" }}  
-    email = {{ .pro_email_address }}
+  name = "{{ .name }}"
+{{- if eq .proMachine "true" }}  
+  email = {{ .proEmail }}
 {{- else }}
-    email = {{ .email_address }}
+  email = {{ .email }}
 {{- end }}
 
 [diff]

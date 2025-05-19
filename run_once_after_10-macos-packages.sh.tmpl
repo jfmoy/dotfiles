@@ -12,8 +12,27 @@ pwd
 
 set -x
 
-export HOMEBREW_NO_AUTO_UPDATE=1
+# Update Homebrew and upgrade all packages
+echo "Updating Homebrew..."
+brew update
+echo "Upgrading Homebrew packages..."
+brew upgrade
 
-brew bundle --verbose --no-upgrade --no-lock || true
+# Apply common Brewfile
+echo "Applying common packages..."
+brew bundle --verbose --file=Brewfile.common --greedy || true
+
+# Apply specific Brewfile based on machine type
+if [ "{{ .proMachine }}" = "true" ]; then
+    echo "Applying pro-specific packages..."
+    brew bundle --verbose --file=Brewfile.pro --greedy || true
+else
+    echo "Applying home-specific packages..."
+    brew bundle --verbose --file=Brewfile --greedy || true
+fi
+
+# Clean up old versions and cache
+echo "Cleaning up..."
+brew cleanup
 
 set +x

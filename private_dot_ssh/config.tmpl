@@ -6,7 +6,7 @@ Host *
   UseKeychain yes
 {{- end }}
 
-{{ if eq .darwin_pro "true" }}
+{{ if eq .proMachine "true" }}
 Host {{ range (onepassword "uk7kke52vbzvtylpjjqtjpylg4").fields -}}
   {{ if and (eq .label "name") -}}
   {{   .value -}}

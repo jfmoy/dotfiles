@@ -12,11 +12,12 @@ if [ -z ${HOMEBREW_PREFIX+x} ]; then
 {{ else }}
   eval "$(/usr/local/bin/brew shellenv)"
 {{ end }}
+brew analytics off
+
+# we prioritise these first, for fresh installs these are more important
+brew install 1password git mas jq
 else
   echo "HOMEBREW_PREFIX set to $HOMEBREW_PREFIX"
 fi
 
-brew analytics off
 
-# we prioritise these first, for fresh installs these are more important
-brew install 1password git mas python@3.9 jq

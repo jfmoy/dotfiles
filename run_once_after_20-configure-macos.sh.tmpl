@@ -13,10 +13,10 @@ osascript -e 'tell application "System Preferences" to quit'
 
 sudo xcodebuild -license accept || true
 
-sudo scutil --set ComputerName {{ .darwin_hostname | quote }}
-sudo scutil --set HostName {{ .darwin_hostname | quote }}
-sudo scutil --set LocalHostName {{ .darwin_hostname | quote }}
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string {{ .darwin_hostname | quote }}
+sudo scutil --set ComputerName {{ .hostname | quote }}
+sudo scutil --set HostName {{ .hostname | quote }}
+sudo scutil --set LocalHostName {{ .hostname | quote }}
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string {{ .hostname | quote }}
 
 # The trick to get those configuration keys:
 # $ defaults read > before
