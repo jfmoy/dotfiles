@@ -1,0 +1,5 @@
+# Home-specific casks
+# Voice and text chat software
+cask "discord"
+# VPN service
+cask "private-internet-access"
