@@ -17,6 +17,7 @@ export PATH=/opt/homebrew/bin:$PATH
 {{ else }}
 export PATH=/usr/local/bin:$PATH
 {{ end }}
+alias brewup="brew update && brew bundle --file ~/.config/darwin/Brewfile --cleanup --zap"
 
 
 # Git
