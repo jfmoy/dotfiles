@@ -79,12 +79,8 @@ cask "gimp", greedy: true
 cask "keka", greedy: true
 # Open-source Markdown editor
 cask "macdown", greedy: true
-# Shows the next meeting in the menu bar
-cask "meetingbar", greedy: true
 # RSS Reader
 cask "netnewswire", greedy: true
-# Reverse proxy, secure introspectable tunnels to localhost
-cask "ngrok", greedy: true
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian", greedy: true
 # Launcher
@@ -123,7 +119,7 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541 
 
 
-{{- if .proMachine -}}
+{{- if eq .proMachine "true" -}}
 # Phrase Homebrew Tap
 tap "phrase/brewed"
 # PHP Homebrew Tap
@@ -152,8 +148,12 @@ brew "docker-compose", greedy: true
 brew "helm", greedy: true
 # Kubernetes command-line interface
 brew "kubernetes-cli", greedy: true
+# Shows the next meeting in the menu bar
+cask "meetingbar", greedy: true
 # Node version management
 brew "n", greedy: true
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok", greedy: true
 # Persistent key-value database, with built-in net interface
 brew "redis", greedy: true
 # Login and retrieve AWS temporary credentials using a SAML IDP
