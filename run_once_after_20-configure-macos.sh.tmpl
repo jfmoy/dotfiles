@@ -147,45 +147,45 @@ defaults write com.apple.dock tilesize -int 40
 # Safari
 
 # Press Tab to highlight each item on a web page
-defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
+# defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
+# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
 
 # Show the full URL in the address bar (note: this still hides the scheme)
-defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+# defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 # Set Safari’s home page to `about:blank` for faster loading
-defaults write com.apple.Safari HomePage -string "about:blank"
+# defaults write com.apple.Safari HomePage -string "about:blank"
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
-defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+# defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 # Enable Safari’s debug menu
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+# defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 # Enable the Develop menu and the Web Inspector in Safari
-defaults write com.apple.Safari IncludeDevelopMenu -int 1
-defaults write com.apple.Safari WebKitPreferences.developerExtrasEnabled -int 1
-defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -int 1
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+# defaults write com.apple.Safari IncludeDevelopMenu -int 1
+# defaults write com.apple.Safari WebKitPreferences.developerExtrasEnabled -int 1
+# defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -int 1
+# defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Enable continuous spellchecking
-defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
+# defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
 
 # Disable auto-correct
-defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool false
+# defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool false
 
-defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
-defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+# defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
+# defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 # use 1Password autofill instead of the built-in one
-defaults write com.apple.Safari AutoFillCreditCardData -int 0
-defaults write com.apple.Safari AutoFillFromAddressBook -int 0
-defaults write com.apple.Safari AutoFillMiscellaneousForms -int 0
-defaults write com.apple.Safari AutoFillPasswords -int 0
+# defaults write com.apple.Safari AutoFillCreditCardData -int 0
+# defaults write com.apple.Safari AutoFillFromAddressBook -int 0
+# defaults write com.apple.Safari AutoFillMiscellaneousForms -int 0
+# defaults write com.apple.Safari AutoFillPasswords -int 0
 
 # Mail
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>`
