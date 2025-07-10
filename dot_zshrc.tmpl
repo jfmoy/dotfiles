@@ -1,8 +1,5 @@
 # User configuration
 
-# Init starship
-eval "$(starship init zsh)"
-
 # N
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
@@ -19,6 +16,8 @@ export PATH=/usr/local/bin:$PATH
 {{ end }}
 alias brewup="brew update && brew bundle --file ~/.config/darwin/Brewfile"
 
+# Init starship
+eval "$(starship init zsh)"
 
 # Git
 alias gcn="git commit --no-verify"
