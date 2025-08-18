@@ -158,6 +158,8 @@ cask "datagrip", greedy: true
 cask "headlamp", greedy: true
 # Java IDE by JetBrains
 cask "intellij-idea", greedy: true
+# VPN service
+cask "private-internet-access", greedy: true
 
 {{ else }}
 # Fast static site generator in a single binary with everything built-in
@@ -165,8 +167,6 @@ brew "zola"
 
 # Voice and text chat software
 cask "discord", greedy: true
-# VPN service
-cask "private-internet-access", greedy: true
 # Application for interacting with Internet Relay Chat (IRC) chatrooms
 cask "textual", greedy: true
 {{- end -}}
