@@ -24,6 +24,7 @@ alias gcn="git commit --no-verify"
 alias gpn="git push origin --no-verify"
 alias gpnf="git push origin --no-verify --force"
 alias gfpp="git checkout develop && git fetch --prune && git pull"
+alias gfpm='git checkout $(git branch -r | grep -E "origin/(main|master)" | head -1 | sed "s/.*origin\///") && git fetch --prune && git pull'
 
 # AWS
 alias oktaws='saml2aws login --profile=default && eval $(saml2aws script --profile=default)'
