@@ -127,6 +127,8 @@ tap "phrase/brewed"
 tap "shivammathur/php"
 # HCL editor tap
 tap "minamijoyo/hcledit"
+# Terraform
+tap "hashicorp/tap"
 
 # Pro-specific CLI tools
 # Official Amazon AWS command-line interface
@@ -152,7 +154,7 @@ cask "ngrok", greedy: true
 # User interface to the TELNET protocol
 brew "telnet", greedy: true
 # Tool to build, change, and version infrastructure
-brew "terraform", greedy: true
+brew "hashicorp/tap/terraform", greedy: true
 # Git hook scripts to identify and fix issues before submission
 brew "pre-commit", greedy: true
 # Generate documentation from Terraform modules
