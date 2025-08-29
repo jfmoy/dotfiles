@@ -125,6 +125,8 @@ mas "Pages", id: 409201541
 tap "phrase/brewed"
 # PHP Homebrew Tap
 tap "shivammathur/php"
+# HCL editor tap
+tap "minamijoyo/hcledit"
 
 # Pro-specific CLI tools
 # Official Amazon AWS command-line interface
@@ -151,6 +153,16 @@ cask "ngrok", greedy: true
 brew "telnet", greedy: true
 # Tool to build, change, and version infrastructure
 brew "terraform", greedy: true
+# Git hook scripts to identify and fix issues before submission
+brew "pre-commit", greedy: true
+# Generate documentation from Terraform modules
+brew "terraform-docs", greedy: true
+# Terraform linter for detecting errors and best practices
+brew "tflint", greedy: true
+# Cloud cost estimation tool for Terraform
+brew "infracost", greedy: true
+# HCL editor - Editor for HCL files
+brew "minamijoyo/hcledit/hcledit", greedy: true
 
 # Databases & SQL IDE
 cask "datagrip", greedy: true
