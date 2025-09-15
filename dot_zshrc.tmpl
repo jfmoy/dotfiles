@@ -1,5 +1,9 @@
 # User configuration
 
+# Autocompletions
+autoload -Uz compinit
+compinit
+
 # N
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
@@ -20,6 +24,7 @@ alias brewup="brew update && brew bundle --file ~/.config/darwin/Brewfile"
 eval "$(starship init zsh)"
 
 # Git
+alias gp="git push"
 alias gcn="git commit --no-verify"
 alias gpn="git push origin --no-verify"
 alias gpnf="git push origin --no-verify --force"
@@ -34,10 +39,13 @@ if [ -d "${ZDOTDIR:-$HOME}/.zprezto" ] ; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi;
 
-# PHP Version Switcher
-source ~/.local/scripts/switch_php_version.sh
 
 # Golang
 if command -v go &> /dev/null; then
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
+
+{{- if eq .proMachine "true" -}}
+# saml2aws completions
+eval "$(saml2aws --completion-script-zsh)"
+{{- end -}}

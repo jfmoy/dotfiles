@@ -1,43 +1,20 @@
 
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "PasteSelection"
-key = "Insert"
-mods = "Shift"
-
-[[keyboard.bindings]]
-action = "ResetFontSize"
-key = "Key0"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Equals"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Plus"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "ToggleFullscreen"
-key = "F11"
-mods = "None"
+[keyboard]
+bindings = [
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "Insert", mods = "Shift", action = "PasteSelection" },
+  { key = "Key0", mods = "Control", action = "ResetFontSize" },
+  { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+  { key = "F11", mods = "None", action = "ToggleFullscreen" },
+  { key = "Left", mods = "Alt", chars = "\u001bB" },
+  { key = "Right", mods = "Alt", chars = "\u001bF" },
+  { key = "Left", mods = "Command", chars = "\u001bOH" },
+  { key = "Right", mods = "Command", chars = "\u001bOF" },
+  { key = "Back", mods = "Command", chars = "\u0015" },
+]
 
 [general]
 live_config_reload = true
@@ -135,5 +112,3 @@ option_as_alt = "Both"
 [window.padding]
 x = 5
 y = 5
-
-[keyboard]
