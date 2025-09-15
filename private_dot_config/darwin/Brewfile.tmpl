@@ -82,6 +82,8 @@ cask "macdown", greedy: true
 cask "netnewswire", greedy: true
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian", greedy: true
+# VPN service
+cask "private-internet-access", greedy: true
 # Catalogue of hi-res music for streaming and download
 cask "qobuz", greedy: true
 # Launcher
@@ -107,6 +109,7 @@ cask "vlc", greedy: true
 # Web browser
 cask "zen", greedy: true
 
+
 # Common Mac App Store apps
 # Keep your Mac awake
 mas "Amphetamine", id: 937984704
@@ -123,8 +126,6 @@ mas "Pages", id: 409201541
 {{- if eq .proMachine "true" -}}
 # Phrase Homebrew Tap
 tap "phrase/brewed"
-# PHP Homebrew Tap
-tap "shivammathur/php"
 # HCL editor tap
 tap "minamijoyo/hcledit"
 # Terraform
@@ -172,8 +173,10 @@ cask "datagrip", greedy: true
 cask "headlamp", greedy: true
 # Java IDE by JetBrains
 cask "intellij-idea", greedy: true
-# VPN service
-cask "private-internet-access", greedy: true
+# Postgres
+cask "pgadmin4", greedy: true
+# AWS & SSO
+brew "saml2aws", greedy: true
 
 {{ else }}
 # Fast static site generator in a single binary with everything built-in
