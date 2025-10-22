@@ -1,0 +1,109 @@
+# Lazygit Configuration
+# Docs: https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
+gui:
+  # Catppuccin Mocha theme
+  theme:
+    activeBorderColor:
+      - "#cba6f7"  # Mauve
+      - bold
+    inactiveBorderColor:
+      - "#45475a"  # Surface1
+    optionsTextColor:
+      - "#89b4fa"  # Blue
+    selectedLineBgColor:
+      - "#313244"  # Surface0
+    selectedRangeBgColor:
+      - "#313244"  # Surface0
+    cherryPickedCommitBgColor:
+      - "#45475a"  # Surface1
+    cherryPickedCommitFgColor:
+      - "#cba6f7"  # Mauve
+    untracked:
+      - "#f9e2af"  # Yellow
+    modified:
+      - "#89b4fa"  # Blue
+    added:
+      - "#a6e3a1"  # Green
+    deleted:
+      - "#f38ba8"  # Red
+    conflicted:
+      - "#fab387"  # Peach
+
+  # Display settings
+  showFileTree: true
+  showRandomTip: false
+  showCommandLog: false
+  showBottomLine: false
+
+  # Commit message length
+  commitLength:
+    show: true
+
+  # Mouse support
+  mouseEvents: true
+
+  # Scrolling
+  scrollHeight: 2
+  scrollPastBottom: true
+
+  # Window size
+  sidePanelWidth: 0.3333
+
+git:
+  paging:
+    # Use delta for diffs (matches gitconfig)
+    useConfig: true
+
+  # Auto-fetch
+  autoFetch: true
+  autoRefresh: true
+
+  # Commit settings
+  commit:
+    signOff: false
+
+  # Merge settings
+  merging:
+    manualCommit: false
+
+  # Branch settings
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --"
+
+# Keybindings (keep defaults, can customize later)
+keybinding:
+  universal:
+    quit: 'q'
+    quit-alt1: '<c-c>'
+    return: '<esc>'
+    quitWithoutChangingDirectory: 'Q'
+    togglePanel: '<tab>'
+    prevItem: '<up>'
+    nextItem: '<down>'
+    prevItem-alt: 'k'
+    nextItem-alt: 'j'
+    prevPage: ','
+    nextPage: '.'
+    gotoTop: '<'
+    gotoBottom: '>'
+    scrollLeft: 'H'
+    scrollRight: 'L'
+    prevBlock: '<left>'
+    nextBlock: '<right>'
+    prevBlock-alt: 'h'
+    nextBlock-alt: 'l'
+
+# OS specific
+os:
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} {{filename}}'
+  openCommand: 'open {{filename}}'
+
+# Refresh settings
+refresher:
+  refreshInterval: 10
+  fetchInterval: 60
+
+# Update checking
+update:
+  method: never  # Let Homebrew handle updates
