@@ -1,0 +1,118 @@
+# Starship Prompt Configuration
+# Docs: https://starship.rs/config/
+
+# Prompt format
+format = """
+[┌─](bold green)$username$hostname$directory$git_branch$git_status
+[└─>](bold green) $character"""
+
+# Right prompt (shows context)
+right_format = """$cmd_duration$kubernetes$aws$terraform$docker_context"""
+
+# Timeout
+scan_timeout = 30
+command_timeout = 500
+
+# Character (prompt symbol)
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+vicmd_symbol = "[V](bold yellow)"
+
+# Directory
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
+read_only = " 🔒"
+home_symbol = "~"
+
+# Git branch
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+style = "bold purple"
+truncation_length = 30
+
+# Git status
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold red"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+deleted = "✘${count}"
+modified = "!${count}"
+staged = "+${count}"
+untracked = "?${count}"
+stashed = "$${count}"
+conflicted = "=${count}"
+
+# Command duration
+[cmd_duration]
+min_time = 500
+format = "took [$duration]($style) "
+style = "bold yellow"
+
+# Username (only show if not default user)
+[username]
+format = "[$user]($style) in "
+style_user = "bold yellow"
+style_root = "bold red"
+show_always = false
+
+# Hostname (only show if SSH)
+[hostname]
+ssh_only = true
+format = "on [$hostname]($style) "
+style = "bold green"
+
+# Kubernetes context
+[kubernetes]
+disabled = false
+format = '[☸ $context(\($namespace\))]($style) '
+style = "bold blue"
+
+# AWS profile
+[aws]
+disabled = false
+format = '[☁️  $profile(\($region\))]($style) '
+style = "bold yellow"
+
+# Terraform workspace
+[terraform]
+disabled = false
+format = '[💠 $workspace]($style) '
+style = "bold purple"
+
+# Docker context
+[docker_context]
+disabled = false
+format = "[🐳 $context]($style) "
+style = "bold blue"
+
+# Node.js version
+[nodejs]
+disabled = false
+format = "[⬢ $version]($style) "
+style = "bold green"
+
+# Python version
+[python]
+disabled = false
+format = '[🐍 $version(\($virtualenv\))]($style) '
+style = "bold yellow"
+
+# Golang version
+[golang]
+disabled = false
+format = "[🐹 $version]($style) "
+style = "bold cyan"
+
+# Time (disabled by default)
+[time]
+disabled = true
+format = "[$time]($style) "
+style = "bold white"
+time_format = "%T"
