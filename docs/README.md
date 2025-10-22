@@ -221,6 +221,28 @@ git absorb
 GIT_EXTERNAL_DIFF=difft git diff
 ```
 
+### Neovim with LazyVim
+
+**[📖 Neovim LazyVim Cheatsheet](./neovim-lazyvim.md)**
+
+Complete IDE experience in terminal with Neovim and LazyVim.
+- File navigation with Telescope fuzzy finder
+- File explorer with Neo-tree
+- LSP code navigation and actions
+- Git integration
+- Terminal integration
+
+**Essential shortcuts:**
+```bash
+<leader>ff   # Find files (Ctrl+P equivalent)
+<leader>fg   # Find in files (grep)
+<leader>bb   # Switch buffers
+<leader>e    # Toggle file explorer
+gd           # Go to definition
+<C-o>        # Jump back
+```
+**Note:** `<leader>` is `<Space>` in LazyVim. Press Space and pause to see available commands!
+
 ### Starship Prompt Configuration
 
 **[📖 Starship Configuration Guide](./starship-configuration.md)**
@@ -286,6 +308,7 @@ git-maintenance
 - **HTTPie** - API testing and debugging
 - **just** - Task automation
 - **Git Workflow Tools** - lazygit, git-absorb, difftastic
+- **Neovim with LazyVim** - Full IDE in terminal
 
 ### Infrastructure & Networking
 - **SSH Multiplexing** - Connection reuse for 10x faster SSH/SCP/rsync
@@ -364,6 +387,9 @@ These tools complement what you already have:
 | Visual git interface | `lazygit` | [git-workflow-tools](./git-workflow-tools.md) |
 | Auto-fixup commits | `git absorb` | [git-workflow-tools](./git-workflow-tools.md) |
 | Custom prompt | Automatic (starship) | [starship-configuration](./starship-configuration.md) |
+| Open file in IDE | `nvim .` | [neovim-lazyvim](./neovim-lazyvim.md) |
+| Find file in nvim | `<Space>ff` | [neovim-lazyvim](./neovim-lazyvim.md) |
+| Find in files (nvim) | `<Space>fg` | [neovim-lazyvim](./neovim-lazyvim.md) |
 | System cleanup | `cleanup` | [maintenance-functions](./maintenance-functions.md) |
 | Update all tools | `update-all` | [maintenance-functions](./maintenance-functions.md) |
 | Git repo maintenance | `git-maintenance` | [maintenance-functions](./maintenance-functions.md) |
