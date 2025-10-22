@@ -56,6 +56,12 @@ export PATH=/usr/local/bin:$PATH
 {{ end }}
 alias brewup="brew update && brew bundle --file ~/.config/darwin/Brewfile"
 
+# Editor - use neovim everywhere
+export EDITOR="nvim"
+export VISUAL="nvim"
+alias vim="nvim"
+alias vi="nvim"
+
 # Init starship
 eval "$(starship init zsh)"
 
