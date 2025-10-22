@@ -4,6 +4,8 @@ tap "versent/taps"
 # Common CLI tools
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat", greedy: true
+# Modern resource monitor with better defaults
+brew "bottom", greedy: true
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi", greedy: true
 # Cross-platform make
@@ -14,12 +16,26 @@ brew "curl", greedy: true
 brew "diff-so-fancy", greedy: true
 # Allow managing Dock entries
 brew "dockutil", greedy: true
+# Pretty disk free utility
+brew "duf", greedy: true
+# Intuitive disk usage utility
+brew "dust", greedy: true
+# Modern replacement for ls
+brew "eza", greedy: true
+# Simple, fast alternative to find
+brew "fd", greedy: true
+# Syntax-aware diff tool
+brew "difftastic", greedy: true
 # Command-line fuzzy finder written in Go
 brew "fzf", greedy: true
 # Distributed revision control system
 brew "git", greedy: true
+# Simple terminal UI for git commands
+brew "lazygit", greedy: true
 # Diffing utility
 brew "git-delta"
+# Automatic git commit --fixup
+brew "git-absorb", greedy: true
 # Improved top (interactive process viewer)
 brew "htop", greedy: true
 # Lightweight and flexible command-line JSON processor
@@ -30,10 +46,14 @@ brew "mas", greedy: true
 brew "neovim", greedy: true
 # Global isolation of Python CLI applications
 brew "pipx", greedy: true
+# Modern replacement for ps
+brew "procs", greedy: true
 # Python
 brew "python", greedy: true
 # Perl-powered file rename script with many helpful built-ins
 brew "rename", greedy: true
+# Search tool like grep and The Silver Searcher
+brew "ripgrep", greedy: true
 # Simplified and community-driven man pages
 brew "tldr", greedy: true
 # Power-user shell
@@ -44,8 +64,15 @@ brew "tmux", greedy: true
 brew "vim", greedy: true
 # Internet file retriever
 brew "wget", greedy: true
+# Shell extension to navigate your filesystem faster
+brew "zoxide", greedy: true
 # UNIX shell (command interpreter)
 brew "zsh", greedy: true
+
+# Window management
+tap "koekeishiya/formulae"
+brew "koekeishiya/formulae/yabai", greedy: true
+brew "koekeishiya/formulae/skhd", greedy: true
 
 # Common casks
 # Password manager that keeps all passwords secure behind one password
@@ -53,9 +80,7 @@ cask "1password", greedy: true
 # Command-line helper for the 1Password password manager
 cask "1password-cli", greedy: true
 # GPU-accelerated terminal emulator
-cask "alacritty", greedy: true
-# Automatic tiling window manager similar to xmonad
-cask "amethyst", greedy: true
+cask "kitty", greedy: true
 # Memory training application
 cask "anki", greedy: true
 # Application uninstaller
@@ -132,10 +157,12 @@ tap "minamijoyo/hcledit"
 tap "hashicorp/tap"
 
 # Pro-specific CLI tools
+# Extendable version manager with support for multiple languages
+brew "asdf", greedy: true
 # Official Amazon AWS command-line interface
 brew "awscli", greedy: true
-# Validating, recursive, caching DNS resolver
-brew "unbound", greedy: true
+# Load and unload environment variables based on current directory
+brew "direnv", greedy: true
 # Pack, ship and run any application as a lightweight container
 brew "docker", greedy: true
 # Isolated development environments using Docker
@@ -144,6 +171,10 @@ brew "docker-compose", greedy: true
 brew "gh", greedy: true
 # Kubernetes package manager
 brew "helm", greedy: true
+# User-friendly command-line HTTP tool
+brew "httpie", greedy: true
+# Command runner for project-specific tasks
+brew "just", greedy: true
 # Kubernetes command-line interface
 brew "kubernetes-cli", greedy: true
 # Shows the next meeting in the menu bar

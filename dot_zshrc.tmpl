@@ -1,5 +1,41 @@
 # User configuration
 
+# History configuration
+HISTSIZE=50000
+SAVEHIST=50000
+HISTFILE=~/.zsh_history
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+setopt HIST_IGNORE_SPACE
+
+# Better globbing
+setopt EXTENDED_GLOB
+setopt GLOB_DOTS
+setopt NO_CASE_GLOB
+
+# Directory navigation
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_SILENT
+setopt PUSHD_TO_HOME
+DIRSTACKSIZE=20
+
+# Command corrections
+setopt CORRECT
+
+# Better completions
+setopt COMPLETE_IN_WORD
+setopt ALWAYS_TO_END
+setopt AUTO_MENU
+setopt LIST_PACKED
+
 # Autocompletions
 autoload -Uz compinit
 compinit
@@ -23,11 +59,78 @@ alias brewup="brew update && brew bundle --file ~/.config/darwin/Brewfile"
 # Init starship
 eval "$(starship init zsh)"
 
-# Git
-alias gp="git push"
+# Git aliases
+# Status & diff
+alias gst="git status --short"
+alias gss="git status"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gdw="git diff --word-diff"
+
+# Add
+alias ga="git add"
+alias gaa="git add --all"
+alias gap="git add -p"
+
+# Commit
+alias gc="git commit -v"
+alias gcm="git commit -m"
+alias gca="git commit -v --amend"
+alias gcan="git commit -v --amend --no-edit"
 alias gcn="git commit --no-verify"
+
+# Branch
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbd="git branch -d"
+alias gbD="git branch -D"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gbclean="git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d"
+
+# Log
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gloga="git log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glo="git log --oneline --decorate"
+
+# Remote
+alias gf="git fetch"
+alias gfa="git fetch --all"
+alias gfp="git fetch --prune"
+alias gpl="git pull"
+alias gpr="git pull --rebase"
+alias gp="git push"
+alias gpu="git push -u origin HEAD"
 alias gpn="git push origin --no-verify"
 alias gpnf="git push origin --no-verify --force"
+
+# Stash
+alias gsta="git stash"
+alias gstaa="git stash apply"
+alias gstl="git stash list"
+alias gstp="git stash pop"
+alias gstd="git stash drop"
+alias gstc="git stash clear"
+
+# Undo operations
+alias gundo="git reset --soft HEAD~1"
+alias gunstage="git restore --staged"
+alias gdiscard="git restore"
+
+# Show & inspect
+alias gsh="git show"
+alias gshow="git show --pretty=fuller"
+alias gwhat="git show --stat"
+alias gwho="git shortlog -sn"
+
+# Worktree
+alias gwt="git worktree"
+alias gwta="git worktree add"
+alias gwtl="git worktree list"
+alias gwtp="git worktree prune"
+alias gwtr="git worktree remove"
+
+# Convenience shortcuts
 alias gfpp="git checkout develop && git fetch --prune && git pull"
 alias gfpm='git checkout $(git branch -r | grep -E "origin/(main|master)" | head -1 | sed "s/.*origin\///") && git fetch --prune && git pull'
 
@@ -45,7 +148,32 @@ if command -v go &> /dev/null; then
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
 
-{{- if eq .proMachine "true" -}}
+# Local bin
+export PATH="$HOME/.local/bin:$PATH"
+
+# Modern CLI tools
+alias ls="eza --icons --group-directories-first"
+alias ll="eza --icons --group-directories-first -l"
+alias la="eza --icons --group-directories-first -la"
+alias lt="eza --icons --group-directories-first --tree"
+
+# Zoxide (smart cd)
+eval "$(zoxide init zsh)"
+
+{{- if eq .proMachine "true" }}
+# PostgreSQL tools
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# asdf version manager
+{{ if eq .chezmoi.arch "arm64" }}
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+{{ else }}
+. /usr/local/opt/asdf/libexec/asdf.sh
+{{ end }}
+
+# direnv
+eval "$(direnv hook zsh)"
+
 # saml2aws completions
 eval "$(saml2aws --completion-script-zsh)"
 {{- end -}}

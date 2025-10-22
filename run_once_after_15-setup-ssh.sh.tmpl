@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+{{ template "script_darwin_only" . }}
+{{ template "script_no_root" . }}
+
+set -x
+
+# Create SSH sockets directory for connection multiplexing
+mkdir -p ~/.ssh/sockets
+chmod 700 ~/.ssh/sockets
+
+echo "SSH sockets directory created"

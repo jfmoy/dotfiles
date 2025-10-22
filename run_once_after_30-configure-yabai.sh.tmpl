@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+{{ template "script_darwin_only" . }}
+{{ template "script_no_root" . }}
+{{ template "script_caffeinate" . }}
+
+set -x
+
+# Make yabairc executable
+chmod +x ~/.config/yabai/yabairc
+
+# Make skhdrc executable
+chmod +x ~/.config/skhd/skhdrc
+
+# Start yabai service
+yabai --start-service
+
+# Start skhd service
+skhd --start-service
+
+echo "yabai and skhd services started"
