@@ -85,7 +85,7 @@ Your starship prompt shows:
 | `+n` | n staged files |
 | `?n` | n untracked files |
 | `✘n` | n deleted files |
-| `$n` | n stashed changes |
+| `📦n` | n stashed changes |
 | `=n` | n conflicted files |
 | `⇡n` | n commits ahead of remote |
 | `⇣n` | n commits behind remote |

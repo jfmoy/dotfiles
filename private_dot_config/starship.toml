@@ -46,7 +46,7 @@ deleted = "✘${count}"
 modified = "!${count}"
 staged = "+${count}"
 untracked = "?${count}"
-stashed = "$${count}"
+stashed = "📦${count}"
 conflicted = "=${count}"
 
 # Command duration

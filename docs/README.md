@@ -243,6 +243,27 @@ Beautiful, informative shell prompt with git awareness and context display.
 # - Success/error indicator (➜ or ✗)
 ```
 
+### Maintenance Functions
+
+**[📖 Maintenance Functions Guide](./maintenance-functions.md)**
+
+Automated cleanup and maintenance for your system.
+- **cleanup** - Clean Homebrew, Docker, git worktrees, and caches
+- **update-all** - Update Homebrew, chezmoi, asdf plugins, and more
+- **git-maintenance** - Maintain current git repository
+
+**Quick examples:**
+```bash
+# Monthly system cleanup
+cleanup
+
+# Weekly updates
+update-all
+
+# Git repo maintenance
+git-maintenance
+```
+
 ---
 
 ## Tool Categories
@@ -274,6 +295,7 @@ Beautiful, informative shell prompt with git awareness and context display.
 - **Tmux Configuration** - Vi-mode, mouse support, better keybindings
 - **Git Aliases** - Comprehensive workflow shortcuts
 - **Starship Prompt** - Beautiful, informative shell prompt
+- **Maintenance Functions** - Automated cleanup and updates
 
 ---
 
@@ -342,7 +364,25 @@ These tools complement what you already have:
 | Visual git interface | `lazygit` | [git-workflow-tools](./git-workflow-tools.md) |
 | Auto-fixup commits | `git absorb` | [git-workflow-tools](./git-workflow-tools.md) |
 | Custom prompt | Automatic (starship) | [starship-configuration](./starship-configuration.md) |
+| System cleanup | `cleanup` | [maintenance-functions](./maintenance-functions.md) |
+| Update all tools | `update-all` | [maintenance-functions](./maintenance-functions.md) |
+| Git repo maintenance | `git-maintenance` | [maintenance-functions](./maintenance-functions.md) |
 
 ---
 
-**Last updated:** 2025-10-21
+## Future Enhancements
+
+Optional improvements to consider later:
+
+**[📋 Future Enhancements](./FUTURE_ENHANCEMENTS.md)**
+
+- 1Password CLI integration with direnv
+- Git configuration enhancements
+- macOS defaults automation script
+- Backup/restore strategy
+
+These are documented for future reference but not currently needed.
+
+---
+
+**Last updated:** 2025-10-22
