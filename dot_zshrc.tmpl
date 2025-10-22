@@ -160,6 +160,140 @@ alias lt="eza --icons --group-directories-first --tree"
 # Zoxide (smart cd)
 eval "$(zoxide init zsh)"
 
+# Maintenance functions
+# System cleanup
+cleanup() {
+  echo "🧹 Starting system cleanup..."
+
+  # Homebrew cleanup
+  if command -v brew &> /dev/null; then
+    echo "\n📦 Cleaning Homebrew..."
+    brew cleanup --prune=all
+    brew autoremove
+    echo "✓ Homebrew cleaned"
+  fi
+
+  # Docker cleanup (if installed)
+  if command -v docker &> /dev/null; then
+    echo "\n🐳 Cleaning Docker..."
+    docker system prune -af --volumes 2>/dev/null || echo "⚠️  Docker not running or no permission"
+  fi
+
+  # Git worktree cleanup (current repo only)
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    echo "\n🌳 Pruning git worktrees..."
+    git worktree prune
+    echo "✓ Git worktrees pruned"
+  fi
+
+  # Clear zsh completion cache
+  echo "\n🔄 Clearing zsh completion cache..."
+  rm -f ~/.zcompdump*
+  compinit
+  echo "✓ Completion cache cleared"
+
+  echo "\n✨ Cleanup complete!"
+}
+
+# Update all the things
+update-all() {
+  echo "🚀 Updating all tools..."
+
+  # Homebrew
+  if command -v brew &> /dev/null; then
+    echo "\n📦 Updating Homebrew packages..."
+    brew update
+    brew upgrade
+    brew cleanup
+    echo "✓ Homebrew updated"
+  fi
+
+  # Chezmoi
+  if command -v chezmoi &> /dev/null; then
+    echo "\n🏠 Updating chezmoi..."
+    chezmoi update
+    echo "✓ Chezmoi updated"
+  fi
+
+  # asdf plugins (pro machine only)
+  if command -v asdf &> /dev/null; then
+    echo "\n🔧 Updating asdf plugins..."
+    asdf plugin update --all
+    echo "✓ asdf plugins updated"
+  fi
+
+  # Starship
+  if command -v starship &> /dev/null; then
+    echo "\n✨ Checking starship updates..."
+    starship --version
+    echo "   (run 'brew upgrade starship' if outdated)"
+  fi
+
+  echo "\n✅ All updates complete!"
+}
+
+# Quick git repo maintenance
+git-maintenance() {
+  if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    echo "❌ Not in a git repository"
+    return 1
+  fi
+
+  echo "🔧 Running git maintenance..."
+
+  # Fetch with prune
+  echo "\n📥 Fetching and pruning..."
+  git fetch --prune --all
+
+  # Clean merged branches
+  echo "\n🌿 Cleaning merged branches..."
+  git branch --merged | grep -v '\*\|main\|master\|develop' | xargs -n 1 git branch -d 2>/dev/null || echo "No merged branches to clean"
+
+  # Prune worktrees
+  echo "\n🌳 Pruning worktrees..."
+  git worktree prune
+
+  # Run git gc
+  echo "\n🗑️  Running garbage collection..."
+  git gc --auto
+
+  echo "\n✅ Git maintenance complete!"
+}
+
+# Shell completions
+# Enable bash completion compatibility (for tools that use bash-style completions)
+autoload -U +X bashcompinit && bashcompinit
+
+# GitHub CLI
+if command -v gh &> /dev/null; then
+  eval "$(gh completion -s zsh)"
+fi
+
+# Docker
+if command -v docker &> /dev/null && [ -f /Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion ]; then
+  fpath=(/Applications/Docker.app/Contents/Resources/etc $fpath)
+fi
+
+# Kubectl (pro machine gets this via asdf, but adding for completeness)
+if command -v kubectl &> /dev/null; then
+  source <(kubectl completion zsh)
+fi
+
+# Terraform (uses bash-style completion)
+if command -v terraform &> /dev/null; then
+  complete -o nospace -C $(which terraform) terraform
+fi
+
+# AWS CLI (uses bash-style completion)
+if command -v aws &> /dev/null; then
+  complete -C aws_completer aws
+fi
+
+# Chezmoi
+if command -v chezmoi &> /dev/null; then
+  eval "$(chezmoi completion zsh)"
+fi
+
 {{- if eq .proMachine "true" }}
 # PostgreSQL tools
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

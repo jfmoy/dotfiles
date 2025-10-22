@@ -58,6 +58,24 @@ yabai -m rule --add app="^The Unarchiver$" manage=off
 # Learning applications (Anki - better as floating for flashcard review)
 yabai -m rule --add app="^Anki$" manage=off
 
+# IDE/Editor preferences and settings
+yabai -m rule --add app="^PyCharm$" title="^(Preferences|Settings)$" manage=off
+yabai -m rule --add app="^Visual Studio Code$" title="^(Settings)$" manage=off
+yabai -m rule --add app="^Cursor$" title="^(Settings)$" manage=off
+
+# Media applications
+yabai -m rule --add app="^VLC$" manage=off
+yabai -m rule --add app="^GIMP" manage=off
+yabai -m rule --add app="^Qobuz$" manage=off
+
+# Communication applications
+yabai -m rule --add app="^Signal$" manage=off
+yabai -m rule --add app="^Slack$" manage=off
+yabai -m rule --add app="^Discord$" manage=off
+
+# Productivity tools
+yabai -m rule --add app="^Raycast$" manage=off
+
 # Finder - only float specific windows
 yabai -m rule --add app="^Finder$" title="^(Copy|Connect|Move|Info|Preferences)$" manage=off
 
