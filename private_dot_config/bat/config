@@ -1,0 +1,23 @@
+# Bat Configuration
+# Docs: https://github.com/sharkdp/bat
+
+# Theme (Catppuccin Mocha)
+--theme="Catppuccin-mocha"
+
+# Display settings
+--style="numbers,changes,header,grid"
+
+# Language mappings
+--map-syntax="*.ino:C++"
+--map-syntax=".ignore:Git Ignore"
+--map-syntax="*.jenkinsfile:Groovy"
+--map-syntax="justfile:Makefile"
+
+# Paging
+--paging=auto
+
+# Line wrapping
+--wrap=auto
+
+# Show non-printable characters
+--show-all
