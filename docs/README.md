@@ -221,6 +221,28 @@ git absorb
 GIT_EXTERNAL_DIFF=difft git diff
 ```
 
+### Starship Prompt Configuration
+
+**[📖 Starship Configuration Guide](./starship-configuration.md)**
+
+Beautiful, informative shell prompt with git awareness and context display.
+- Multi-line prompt with git status
+- Shows AWS profile, Kubernetes context, Terraform workspace
+- Command duration for slow operations
+- Language version indicators
+
+**Features:**
+```
+┌─~/projects/myapp on  main [!2 ?1]          ☁️  production
+└─> ➜
+
+# Shows:
+# - Current directory
+# - Git branch and status (!2 modified, ?1 untracked)
+# - AWS profile (production)
+# - Success/error indicator (➜ or ✗)
+```
+
 ---
 
 ## Tool Categories
@@ -251,6 +273,7 @@ GIT_EXTERNAL_DIFF=difft git diff
 - **Zsh Power-User Settings** - Better history, navigation, globbing, completions
 - **Tmux Configuration** - Vi-mode, mouse support, better keybindings
 - **Git Aliases** - Comprehensive workflow shortcuts
+- **Starship Prompt** - Beautiful, informative shell prompt
 
 ---
 
@@ -318,6 +341,7 @@ These tools complement what you already have:
 | Beautiful git log | `glog` | [git-aliases](./git-aliases.md) |
 | Visual git interface | `lazygit` | [git-workflow-tools](./git-workflow-tools.md) |
 | Auto-fixup commits | `git absorb` | [git-workflow-tools](./git-workflow-tools.md) |
+| Custom prompt | Automatic (starship) | [starship-configuration](./starship-configuration.md) |
 
 ---
 
