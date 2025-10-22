@@ -1,0 +1,44 @@
+# Ripgrep Configuration
+# Docs: https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md
+
+# Max columns to search/display
+--max-columns=150
+--max-columns-preview
+
+# Search hidden files and directories
+--hidden
+
+# Exclude patterns
+--glob=!.git/*
+--glob=!node_modules/*
+--glob=!.venv/*
+--glob=!venv/*
+--glob=!__pycache__/*
+--glob=!*.pyc
+--glob=!dist/*
+--glob=!build/*
+--glob=!target/*
+--glob=!.terraform/*
+--glob=!*.min.js
+--glob=!*.min.css
+--glob=!package-lock.json
+--glob=!yarn.lock
+--glob=!Cargo.lock
+--glob=!*.log
+
+# Smart case (case-insensitive unless uppercase in pattern)
+--smart-case
+
+# Follow symbolic links
+--follow
+
+# Use colors with Catppuccin-inspired scheme
+--colors=path:fg:green
+--colors=path:style:bold
+--colors=line:fg:yellow
+--colors=line:style:bold
+--colors=match:fg:red
+--colors=match:style:bold
+
+# Sort by file path
+--sort=path
