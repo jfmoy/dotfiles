@@ -40,6 +40,18 @@ setopt LIST_PACKED
 autoload -Uz compinit
 compinit
 
+# Key bindings - ensure terminal keys work properly
+bindkey -e  # Use emacs key bindings
+bindkey '^?' backward-delete-char  # Backspace
+bindkey '^H' backward-delete-char  # Ctrl+H (alternative backspace)
+bindkey '^[[3~' delete-char        # Delete
+bindkey '^[[H' beginning-of-line   # Home
+bindkey '^[[F' end-of-line         # End
+bindkey '^[[1~' beginning-of-line  # Home (alternative)
+bindkey '^[[4~' end-of-line        # End (alternative)
+bindkey '^[[A' up-line-or-history  # Up arrow
+bindkey '^[[B' down-line-or-history # Down arrow
+
 # N
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
