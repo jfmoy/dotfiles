@@ -52,6 +52,10 @@ bindkey '^[[4~' end-of-line        # End (alternative)
 bindkey '^[[A' up-line-or-history  # Up arrow
 bindkey '^[[B' down-line-or-history # Down arrow
 
+# Alt/Option + Arrow keys for word movement (xterm-style sequences)
+bindkey '^[[1;3C' forward-word      # Alt+Right
+bindkey '^[[1;3D' backward-word     # Alt+Left
+
 # N
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH

@@ -9,3 +9,4 @@ Brewfile.pro.json
 Brewfile.lock.json
 scripts
 fonts
+docs
