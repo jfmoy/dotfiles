@@ -359,4 +359,7 @@ eval "$(direnv hook zsh)"
 
 # saml2aws completions
 eval "$(saml2aws --completion-script-zsh)"
+
+# Jira CLI
+export JIRA_API_TOKEN="{{ range (onepassword "5irl6g7jmqdyu7ec6hgbtao4tm" "u4jdzrotkwefi6bruy57hqcjne" "alpacap.1password.eu").fields -}}{{ if (eq .label "Token") -}}{{ .value }}{{ end -}}{{ end }}"
 {{- end -}}

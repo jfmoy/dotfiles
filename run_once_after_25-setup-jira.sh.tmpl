@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+{{ template "script_darwin_only" . }}
+{{ template "script_no_root" . }}
+{{ template "script_caffeinate" . }}
+
+{{- if eq .proMachine "true" }}
+set -x
+
+# Initialize Jira CLI
+echo "Initializing Jira CLI..."
+jira init
+
+echo "Jira CLI initialized"
+{{- end }}
