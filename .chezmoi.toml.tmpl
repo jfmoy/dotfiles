@@ -9,9 +9,12 @@
 {{- $proEmail = promptStringOnce . "proEmail" "Pro Email address" -}}
 {{ end -}}
 
+{{- $workspaceDir := promptStringOnce . "workspaceDir" "Workspace Directory (for worktrees, etc.)" -}}
+
 [data]
   name = {{ $name | quote }}
   hostname = {{ $hostname | quote }}
   email = {{ $email | quote }}
   proMachine = {{ $proMachine | quote }}
   proEmail = {{ $proEmail | quote }}
+  workspaceDir = {{ $workspaceDir | quote }}
