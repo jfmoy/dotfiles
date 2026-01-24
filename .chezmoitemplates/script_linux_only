@@ -1,0 +1,5 @@
+{{- if ne .chezmoi.os "linux" -}}
+#!/bin/bash
+echo "This script is only for Linux systems. Skipping..."
+exit 0
+{{- end -}}

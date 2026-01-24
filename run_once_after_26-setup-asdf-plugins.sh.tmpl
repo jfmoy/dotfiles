@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+{{ template "script_no_root" . }}
+
+set -euo pipefail
+
+if ! command -v asdf &> /dev/null; then
+    echo "asdf not found, skipping"
+    exit 0
+fi
+
+echo "Setting up asdf plugins..."
+plugins=("nodejs" "python" "java")
+
+for plugin in "${plugins[@]}"; do
+    if asdf plugin list 2>/dev/null | grep -q "^${plugin}$"; then
+        asdf plugin update "$plugin"
+    else
+        asdf plugin add "$plugin" || echo "Failed to add $plugin, continuing..."
+    fi
+done
+
+echo "Done!"

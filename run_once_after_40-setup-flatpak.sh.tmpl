@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+{{ template "script_linux_only" . }}
+
+set -euo pipefail
+
+if ! command -v flatpak &> /dev/null; then
+    sudo pacman -S --needed flatpak
+fi
+
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+echo "Installing Flatpak applications..."
+if [[ -f ~/.config/linux/Flatpakfile ]]; then
+    grep -v '^#' ~/.config/linux/Flatpakfile | grep -v '^$' | awk '{print $1}' | while read -r app; do
+        flatpak install --user -y flathub "$app" || echo "Failed to install $app, continuing..."
+    done
+else
+    echo "Flatpakfile not found, skipping..."
+fi
+
+echo "Done!"

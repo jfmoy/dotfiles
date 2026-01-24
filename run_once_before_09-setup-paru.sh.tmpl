@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+{{ template "script_linux_only" . }}
+
+set -euo pipefail
+
+if ! command -v paru &> /dev/null; then
+    sudo pacman -S --needed paru
+fi
+
+mkdir -p ~/.config/paru
+cat > ~/.config/paru/paru.conf << 'EOF'
+[options]
+PgpFetch
+Devel
+Provides
+DevelSuffixes = -git -cvs -svn -bzr -darcs -always
+BottomUp
+RemoveMake
+SudoLoop
+UseAsk
+CombinedUpgrade
+CleanAfter
+UpgradeMenu
+NewsOnUpgrade
+
+[bin]
+FileManager = ranger
+EOF
+
+echo "Paru configured!"

@@ -3,7 +3,11 @@ font_family      JetBrainsMono Nerd Font
 bold_font        JetBrainsMono Nerd Font Bold
 italic_font      JetBrainsMono Nerd Font Italic
 bold_italic_font JetBrainsMono Nerd Font Bold Italic
-font_size        13.0
+{{ if eq .chezmoi.os "darwin" -}}
+font_size        14.0
+{{ else -}}
+font_size        12.0
+{{ end -}}
 
 # Cursor
 cursor_shape                block
@@ -23,7 +27,18 @@ enabled_layouts             *
 background_opacity          0.95
 
 # Shell
+{{ if eq .chezmoi.os "darwin" -}}
 shell                       /bin/zsh
+{{ else -}}
+shell                       /usr/bin/zsh
+{{ end -}}
+
+# Scrollback
+scrollback_lines            10000
+
+# URLs
+url_style                   curly
+open_url_with               default
 
 # Catppuccin Mocha color scheme
 foreground                  #CDD6F4
@@ -64,20 +79,14 @@ color15                     #A6ADC8
 # Config reload
 allow_remote_control        yes
 
-# macOS Option key handling
-# Set right Option/Alt as Meta key for terminal commands
-# Left Option/Alt is available for typing special characters (e.g., Alt+3 for #)
+{{ if eq .chezmoi.os "darwin" -}}
+# macOS-specific settings
 macos_option_as_alt         right
-
-# Note: Explicit 'map alt+...' bindings have been removed because:
-# 1. They override macos_option_as_alt and capture BOTH left and right Option keys
-# 2. Shell (zsh with emacs keybindings) already handles Alt+b, Alt+f, Alt+d natively
-# 3. Removing them allows left Option to produce special characters (£, #, etc.)
-#
-# Right Option will still send Meta sequences for terminal shortcuts
+macos_quit_when_last_window_closed yes
 
 # Cmd key navigation (macOS convention)
 # Cmd+Left - beginning of line (sends Ctrl+A)
 map cmd+left send_text all \x01
 # Cmd+Right - end of line (sends Ctrl+E)
 map cmd+right send_text all \x05
+{{ end -}}

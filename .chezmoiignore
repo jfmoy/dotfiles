@@ -1,4 +1,4 @@
-# https://www.chezmoi.io/docs/how-to/#handle-configuration-files-which-are-externally-modifiedREADME.md
+# https://www.chezmoi.io/docs/how-to/#handle-configuration-files-which-are-externally-modified
 LICENSE
 README.md
 .git/
@@ -10,3 +10,27 @@ Brewfile.lock.json
 scripts
 fonts
 docs
+
+# OS-conditional ignores
+{{ if ne .chezmoi.os "darwin" }}
+private_dot_config/darwin/
+private_dot_config/skhd/
+private_dot_config/yabai/
+run_once_after_10-macos-packages.sh.tmpl
+run_once_after_20-configure-macos.sh.tmpl
+run_once_after_30-configure-yabai.sh.tmpl
+run_once_before_10-install-homebrew.sh.tmpl
+run_once_before-9-install-rosetta.sh.tmpl
+update_brewfile.sh
+update_brewfile.sh.tmpl
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+private_dot_config/linux/
+run_once_before_09-setup-paru.sh.tmpl
+run_once_before_10-install-1password-cli.sh.tmpl
+run_once_after_10-linux-packages.sh.tmpl
+run_once_after_20-install-paru-packages.sh.tmpl
+run_once_after_25-install-prezto-linux.sh.tmpl
+run_once_after_40-setup-flatpak.sh.tmpl
+{{ end }}

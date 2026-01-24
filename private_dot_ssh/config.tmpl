@@ -16,6 +16,21 @@ Host *
 
   # Compression
   Compression yes
+{{- else if eq .chezmoi.os "linux" }}
+Host *
+  AddKeysToAgent yes
+
+  # SSH multiplexing for faster connections
+  ControlMaster auto
+  ControlPath ~/.ssh/sockets/%r@%h-%p
+  ControlPersist 600
+
+  # Keep connections alive
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
+
+  # Compression
+  Compression yes
 {{- end }}
 
 {{ if eq .proMachine "true" }}
@@ -44,5 +59,6 @@ Host {{ range (onepassword "uk7kke52vbzvtylpjjqtjpylg4" "" "my.1password.com").f
 
 Host github.com
   User git
+  IdentityFile ~/.ssh/id_rsa
   # Disable multiplexing for git operations
   ControlMaster no

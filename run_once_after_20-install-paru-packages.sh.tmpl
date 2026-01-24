@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+{{ template "script_linux_only" . }}
+
+set -euo pipefail
+
+if ! command -v paru &> /dev/null; then
+    echo "Error: paru not found. Run setup-paru.sh first."
+    exit 1
+fi
+
+echo "Installing AUR packages from Parufile..."
+if [[ -f ~/.config/linux/Parufile ]]; then
+    grep -v '^#' ~/.config/linux/Parufile | grep -v '^$' | awk '{print $1}' | while read -r package; do
+        paru -S --needed --noconfirm "$package" || echo "Failed to install $package, continuing..."
+    done
+else
+    echo "Parufile not found, skipping..."
+fi
+
+echo "Done!"

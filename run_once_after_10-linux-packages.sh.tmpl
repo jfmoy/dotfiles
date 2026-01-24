@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+{{ template "script_linux_only" . }}
+
+set -euo pipefail
+
+echo "Updating system packages..."
+sudo pacman -Syu --noconfirm
+
+echo "Installing packages from Pacfile..."
+if [[ -f ~/.config/linux/Pacfile ]]; then
+    grep -v '^#' ~/.config/linux/Pacfile | grep -v '^$' | awk '{print $1}' | while read -r package; do
+        sudo pacman -S --needed --noconfirm "$package" || echo "Failed to install $package, continuing..."
+    done
+else
+    echo "Pacfile not found, skipping..."
+fi
+
+echo "Done!"

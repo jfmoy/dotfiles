@@ -1,0 +1,30 @@
+# Flatpak Applications
+# GUI applications that work well in sandboxed environments
+
+# Media & Graphics
+org.gimp.GIMP                   # Image editor
+com.github.unrud.VideoDownloader # Video downloader
+de.haeckerfelix.Shortwave       # Internet radio
+
+# E-books & Gaming
+com.calibre_ebook.calibre       # E-book management
+com.usebottles.bottles          # Run Windows apps on Linux
+
+# Communication
+org.signal.Signal               # Secure messaging
+com.discordapp.Discord          # Gaming/community chat (if personal)
+
+# Utilities
+com.github.tchx84.Flatseal      # Flatpak permissions
+
+# Productivity
+md.obsidian.Obsidian            # Knowledge management
+com.github.marktext.marktext    # Markdown editor
+
+{{- if eq .proMachine "true" }}
+# Professional apps
+com.slack.Slack                 # Team communication
+{{- end }}
+
+# Browsers (as backup/alternative)
+org.mozilla.firefox             # Firefox
