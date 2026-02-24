@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+{{ template "script_darwin_only" . }}
+{{ template "script_no_root" . }}
+
+{{- if eq .proMachine "true" }}
+set -euo pipefail
+
+if ! command -v npm &> /dev/null; then
+    echo "npm not found, skipping confluence-cli installation"
+    exit 0
+fi
+
+if ! command -v confluence &> /dev/null; then
+    echo "Installing confluence-cli..."
+    npm install -g confluence-cli
+fi
+
+if [[ ! -f "$HOME/.confluence-cli/config.json" ]]; then
+    echo "Initializing Confluence CLI..."
+    confluence init
+    echo "Confluence CLI initialized"
+fi
+{{- end }}

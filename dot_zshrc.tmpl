@@ -478,4 +478,10 @@ fi
 
 # Jira CLI
 export JIRA_API_TOKEN="{{ range (onepassword "5irl6g7jmqdyu7ec6hgbtao4tm" "u4jdzrotkwefi6bruy57hqcjne" "alpacap.1password.eu").fields -}}{{ if (eq .label "Token") -}}{{ .value }}{{ end -}}{{ end }}"
+
+# Confluence CLI
+export CONFLUENCE_API_TOKEN="{{ range (onepassword "i27kyta5ftoumy2jp2hqdespbm" "u4jdzrotkwefi6bruy57hqcjne" "alpacap.1password.eu").fields -}}{{ if (eq .label "Token") -}}{{ .value }}{{ end -}}{{ end }}"
+
+# Local bin (Claude)
+export PATH="$HOME/.local/bin:$PATH"
 {{- end -}}

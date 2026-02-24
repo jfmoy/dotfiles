@@ -2,14 +2,18 @@
 
 {{ template "script_darwin_only" . }}
 {{ template "script_no_root" . }}
-{{ template "script_caffeinate" . }}
 
 {{- if eq .proMachine "true" }}
-set -x
+set -euo pipefail
 
-# Initialize Jira CLI
-echo "Initializing Jira CLI..."
-jira init
+if ! command -v jira &> /dev/null; then
+    echo "jira not found, skipping initialization"
+    exit 0
+fi
 
-echo "Jira CLI initialized"
+if [[ ! -f "$HOME/.config/.jira/.config.yml" ]]; then
+    echo "Initializing Jira CLI..."
+    jira init
+    echo "Jira CLI initialized"
+fi
 {{- end }}
