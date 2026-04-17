@@ -118,10 +118,6 @@ if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
-if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace 4'
-
-[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 5'
 
@@ -225,4 +221,9 @@ run = ['layout floating']
 # PiP windows
 [[on-window-detected]]
 if.window-title-regex-substring = 'Picture in Picture'
+run = ['layout floating']
+
+# Obsidian
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
 run = ['layout floating']
