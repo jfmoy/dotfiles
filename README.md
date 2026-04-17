@@ -11,10 +11,10 @@ Personal macOS configuration managed with [chezmoi](https://www.chezmoi.io/).
 - **tmux** - Terminal multiplexer with vi-mode and mouse support
 
 ### Window Management
-- **yabai** - Tiling window manager
-- **skhd** - Hotkey daemon for keyboard shortcuts
+- **AeroSpace** - i3-like tiling window manager
 
 ### Editors
+- **helix** - Default terminal editor (`$EDITOR`, git)
 - **neovim** with LazyVim - Full IDE experience in terminal
 - **Visual Studio Code** - GUI editor
 - **PyCharm** (pro machines) - Python IDE
@@ -108,9 +108,9 @@ Topics covered:
 ├── private_dot_config/          # ~/.config/* files
 │   ├── darwin/Brewfile.tmpl     # Homebrew packages
 │   ├── kitty/                   # Terminal configuration
+│   ├── helix/                   # Helix configuration
 │   ├── nvim/                    # Neovim configuration
-│   ├── yabai/                   # Window manager config
-│   └── skhd/                    # Keyboard shortcuts
+│   └── aerospace/               # Tiling window manager
 ├── scripts/                     # Utility scripts
 ├── dot_gitconfig.tmpl           # Git configuration
 ├── dot_zshrc.tmpl              # Zsh configuration

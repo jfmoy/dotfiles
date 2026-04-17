@@ -42,6 +42,12 @@ brew "htop", greedy: true
 brew "jq", greedy: true
 # Mac App Store command-line interface
 brew "mas", greedy: true
+# Post-modern modal text editor
+brew "helix", greedy: true
+# Markdown LSP server
+brew "marksman", greedy: true
+# TOML LSP and formatter
+brew "taplo", greedy: true
 # Vim-fork focused on extensibility and usability
 brew "neovim", greedy: true
 # Global isolation of Python CLI applications
@@ -70,9 +76,8 @@ brew "zoxide", greedy: true
 brew "zsh", greedy: true
 
 # Window management
-tap "koekeishiya/formulae"
-brew "koekeishiya/formulae/yabai", greedy: true
-brew "koekeishiya/formulae/skhd", greedy: true
+tap "nikitabobko/tap"
+cask "nikitabobko/tap/aerospace", greedy: true
 
 # Common casks
 # Password manager that keeps all passwords secure behind one password
@@ -179,6 +184,8 @@ cask "ngrok", greedy: true
 brew "telnet", greedy: true
 # Tool to build, change, and version infrastructure
 brew "hashicorp/tap/terraform", greedy: true
+# Terraform LSP server
+brew "hashicorp/tap/terraform-ls", greedy: true
 # Git hook scripts to identify and fix issues before submission
 brew "pre-commit", greedy: true
 # Generate documentation from Terraform modules

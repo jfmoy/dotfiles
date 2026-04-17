@@ -1,0 +1,228 @@
+# AeroSpace tiling window manager configuration
+# Docs: https://nikitabobko.github.io/AeroSpace/guide
+
+# Start at login
+start-at-login = true
+
+# Normalizations
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Mouse follows focus
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# Layout
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Pin workspace 5 to built-in display (Chrome)
+[workspace-to-monitor-force-assignment]
+5 = 'Built-in Retina Display'
+
+# Gaps
+[gaps]
+inner.horizontal = 4
+inner.vertical = 4
+outer.left = 4
+outer.bottom = 4
+outer.top = 4
+outer.right = 4
+
+# Main keybindings
+[mode.main.binding]
+
+# Focus window in direction
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# Swap windows in direction
+alt-shift-h = 'swap left'
+alt-shift-j = 'swap down'
+alt-shift-k = 'swap up'
+alt-shift-l = 'swap right'
+
+# Move windows in direction
+ctrl-alt-h = 'move left'
+ctrl-alt-j = 'move down'
+ctrl-alt-k = 'move up'
+ctrl-alt-l = 'move right'
+
+# Resize
+shift-cmd-h = 'resize width -40'
+shift-cmd-j = 'resize height +40'
+shift-cmd-k = 'resize height -40'
+shift-cmd-l = 'resize width +40'
+
+# Equalize window sizes
+alt-shift-0 = 'balance-sizes'
+
+# Toggle fullscreen
+alt-f = 'fullscreen'
+
+# Toggle float
+alt-shift-space = 'layout floating tiling'
+
+# Toggle split direction
+alt-e = 'layout tiles horizontal vertical'
+
+# Rotate tree
+alt-r = 'layout tiles horizontal vertical'
+
+# Focus workspace
+ctrl-alt-1 = 'workspace 1'
+ctrl-alt-2 = 'workspace 2'
+ctrl-alt-3 = 'workspace 3'
+ctrl-alt-4 = 'workspace 4'
+ctrl-alt-5 = 'workspace 5'
+ctrl-alt-6 = 'workspace 6'
+ctrl-alt-7 = 'workspace 7'
+ctrl-alt-8 = 'workspace 8'
+ctrl-alt-9 = 'workspace 9'
+
+# Move window to workspace
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+
+# Focus recent workspace
+alt-tab = 'workspace-back-and-forth'
+
+# Toggle between layouts
+ctrl-alt-space = 'layout tiles floating'
+ctrl-alt-s = 'layout accordion'
+ctrl-alt-b = 'layout tiles'
+ctrl-alt-f = 'layout floating'
+
+# Reload config
+ctrl-alt-cmd-r = 'reload-config'
+
+# Workspace assignments
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = 'org.pgadmin.pgadmin4'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.usebruno.app'
+run = 'move-node-to-workspace 7'
+
+# Floating window rules
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.AppStore'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.DiskUtility'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.agilebits.onepassword7'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.freemacsoft.AppCleaner'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.avanderlee.Keka'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'net.ankiweb.dtop'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'org.videolan.vlc'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'org.gimp.gimp-official'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.qobuz.desktop'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.raycast.macos'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Dictionary'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.SystemProfiler'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.archiveutility'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.macpaw.site.theunarchiver'
+run = ['layout floating']
+
+# PiP windows
+[[on-window-detected]]
+if.window-title-regex-substring = 'Picture in Picture'
+run = ['layout floating']

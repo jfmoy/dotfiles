@@ -1,0 +1,98 @@
+# TypeScript / JavaScript
+[[language]]
+name = "typescript"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+language-servers = ["typescript-language-server", "eslint"]
+
+[[language]]
+name = "tsx"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+language-servers = ["typescript-language-server", "eslint"]
+
+[[language]]
+name = "javascript"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "babel"] }
+language-servers = ["typescript-language-server", "eslint"]
+
+[[language]]
+name = "jsx"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "babel"] }
+language-servers = ["typescript-language-server", "eslint"]
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+# Terraform
+[[language]]
+name = "hcl"
+auto-format = true
+language-servers = ["terraform-ls"]
+formatter = { command = "terraform", args = ["fmt", "-"] }
+
+[[language]]
+name = "tfvars"
+auto-format = true
+language-servers = ["terraform-ls"]
+formatter = { command = "terraform", args = ["fmt", "-"] }
+
+# Python
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["ruff", "basedpyright"]
+formatter = { command = "ruff", args = ["format", "-"] }
+
+# Markdown
+[[language]]
+name = "markdown"
+auto-format = true
+language-servers = ["marksman"]
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
+
+# YAML
+[[language]]
+name = "yaml"
+auto-format = true
+language-servers = ["yaml-language-server"]
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+# TOML
+[[language]]
+name = "toml"
+auto-format = true
+language-servers = ["taplo"]
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+# Language server definitions
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+validate = "on"
+experimental = { useFlatConfig = false }
+rulesCustomizations = []
+run = "onType"
+problems = { shortenToSingleLine = false }
+nodePath = ""
+
+[language-server.eslint.config.codeAction.disableRuleComment]
+enable = true
+location = "separateLine"
+
+[language-server.eslint.config.codeAction.showDocumentation]
+enable = true

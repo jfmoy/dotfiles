@@ -1,0 +1,46 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+bufferline = "multiple"
+cursorline = true
+color-modes = true
+true-color = true
+auto-format = true
+auto-save = true
+completion-trigger-len = 1
+idle-timeout = 50
+rulers = [100]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+
+[keys.normal]
+C-s = ":w"
+
+[keys.normal.space]
+w = ":w"
+q = ":q"
+x = ":wq"

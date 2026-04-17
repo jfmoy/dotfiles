@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+{{ template "script_no_root" . }}
+
+set -euo pipefail
+
+if ! command -v hx &> /dev/null; then
+    echo "helix not found, skipping LSP setup"
+    exit 0
+fi
+
+echo "Installing Helix language servers and formatters..."
+
+# Node-based LSPs and formatters (via asdf-managed npm)
+if command -v npm &> /dev/null; then
+    echo "Installing npm-based language servers..."
+    npm install -g \
+        typescript \
+        typescript-language-server \
+        prettier \
+        vscode-langservers-extracted \
+        yaml-language-server
+else
+    echo "npm not found; install nodejs via asdf first (asdf set -u nodejs <version>)"
+fi
+
+# Python LSPs (ruff assumed managed via asdf; basedpyright via pipx)
+if command -v ruff &> /dev/null; then
+    echo "ruff already installed: $(ruff --version)"
+else
+    echo "ruff not found; install via asdf (asdf plugin add ruff && asdf set -u ruff latest)"
+fi
+
+if command -v pipx &> /dev/null; then
+    echo "Installing basedpyright..."
+    pipx install --force basedpyright
+else
+    echo "pipx not found; install python via asdf and brew pipx first"
+fi
+
+echo ""
+echo "Run 'hx --health <lang>' to verify each language (typescript, python, terraform, markdown, yaml, toml)."
+echo "Done!"
