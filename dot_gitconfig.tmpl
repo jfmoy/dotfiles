@@ -33,10 +33,10 @@
 
 [user]
   name = "{{ .name }}"
-{{- if eq .proMachine "true" }}  
-  email = {{ .proEmail }}
+{{- if eq .proMachine "true" }}
+  email = "{{ .proEmail }}"
 {{- else }}
-  email = {{ .email }}
+  email = "{{ .email }}"
 {{- end }}
 
 [diff]
