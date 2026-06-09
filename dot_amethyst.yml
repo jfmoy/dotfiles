@@ -1,0 +1,69 @@
+layouts:
+  - tall
+  - wide
+  - fullscreen
+  - column
+  - floating
+
+mod1: [option, shift]
+mod2: [control, option, shift]
+
+focus-counterclockwise: { mod: mod1, key: "k" }
+focus-clockwise:        { mod: mod1, key: "j" }
+swap-counterclockwise:  { mod: mod2, key: "k" }
+swap-clockwise:         { mod: mod2, key: "j" }
+swap-main:              { mod: mod1, key: "return" }
+
+cycle-layout:           { mod: mod1, key: "space" }
+toggle-float:           { mod: mod1, key: "t" }
+display-current-layout: { mod: mod1, key: "i" }
+
+shrink-main:            { mod: mod1, key: "h" }
+expand-main:            { mod: mod1, key: "l" }
+
+throw-screen-1:         { mod: mod2, key: "1" }
+throw-screen-2:         { mod: mod2, key: "2" }
+throw-screen-3:         { mod: mod2, key: "3" }
+
+throw-space-1:          { mod: mod1, key: "1" }
+throw-space-2:          { mod: mod1, key: "2" }
+throw-space-3:          { mod: mod1, key: "3" }
+throw-space-4:          { mod: mod1, key: "4" }
+throw-space-5:          { mod: mod1, key: "5" }
+throw-space-6:          { mod: mod1, key: "6" }
+throw-space-7:          { mod: mod1, key: "7" }
+throw-space-8:          { mod: mod1, key: "8" }
+throw-space-9:          { mod: mod1, key: "9" }
+
+mouse-follows-focus: false
+focus-follows-mouse: false
+window-margins: true
+window-margin-size: 4
+smart-window-margins: true
+restore-layouts-on-launch: true
+
+floating:
+  - com.apple.systempreferences
+  - com.apple.AppStore
+  - com.apple.ActivityMonitor
+  - com.apple.calculator
+  - com.apple.DiskUtility
+  - com.apple.finder
+  - com.apple.Preview
+  - com.apple.Dictionary
+  - com.apple.SystemProfiler
+  - com.apple.archiveutility
+  - com.1password.1password
+  - com.agilebits.onepassword7
+  - com.freemacsoft.AppCleaner
+  - com.avanderlee.Keka
+  - com.macpaw.site.theunarchiver
+  - net.ankiweb.dtop
+  - org.videolan.vlc
+  - org.gimp.gimp-official
+  - com.qobuz.desktop
+  - org.whispersystems.signal-desktop
+  - com.hnc.Discord
+  - com.raycast.macos
+  - md.obsidian
+  - com.anthropic.claudefordesktop

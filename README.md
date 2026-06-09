@@ -11,7 +11,7 @@ Personal macOS configuration managed with [chezmoi](https://www.chezmoi.io/).
 - **tmux** - Terminal multiplexer with vi-mode and mouse support
 
 ### Window Management
-- **AeroSpace** - i3-like tiling window manager
+- **Amethyst** - Tiling window manager that integrates with native macOS spaces
 
 ### Editors
 - **helix** - Default terminal editor (`$EDITOR`, git)
@@ -109,8 +109,7 @@ Topics covered:
 │   ├── darwin/Brewfile.tmpl     # Homebrew packages
 │   ├── kitty/                   # Terminal configuration
 │   ├── helix/                   # Helix configuration
-│   ├── nvim/                    # Neovim configuration
-│   └── aerospace/               # Tiling window manager
+│   └── nvim/                    # Neovim configuration
 ├── scripts/                     # Utility scripts
 ├── dot_gitconfig.tmpl           # Git configuration
 ├── dot_zshrc.tmpl              # Zsh configuration

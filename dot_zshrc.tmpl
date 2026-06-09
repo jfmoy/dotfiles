@@ -450,16 +450,10 @@ if command -v chezmoi &> /dev/null; then
   eval "$(chezmoi completion zsh)"
 fi
 
-# asdf version manager
-{{ if eq .chezmoi.os "darwin" -}}
-{{ if eq .chezmoi.arch "arm64" -}}
-[ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ] && . /opt/homebrew/opt/asdf/libexec/asdf.sh
-{{ else -}}
-[ -f /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
-{{ end -}}
-{{ else -}}
-[ -f /opt/asdf-vm/asdf.sh ] && . /opt/asdf-vm/asdf.sh
-{{ end -}}
+# asdf version manager (0.16+ Go rewrite: no asdf.sh, shims go on PATH)
+if command -v asdf &> /dev/null; then
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+fi
 
 {{- if eq .proMachine "true" }}
 {{ if eq .chezmoi.os "darwin" -}}
