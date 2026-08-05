@@ -85,11 +85,7 @@ keybinding:
 os:
   editCommand: 'nvim'
   editCommandTemplate: '{{`{{editor}} {{filename}}`}}'
-{{ if eq .chezmoi.os "darwin" -}}
-openCommand: 'open {{`{{filename}}`}}'
-{{ else -}}
-openCommand: 'xdg-open {{`{{filename}}`}}'
-{{ end -}}
+  openCommand: '{{ if eq .chezmoi.os "darwin" }}open{{ else }}xdg-open{{ end }} {{`{{filename}}`}}'
 # Refresh settings
 refresher:
   refreshInterval: 10
