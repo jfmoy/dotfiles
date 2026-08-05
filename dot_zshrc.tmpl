@@ -1,5 +1,10 @@
 # User configuration
 
+{{ if eq .chezmoi.os "linux" -}}
+# Re-export prezto's LESS without its -z-4; macOS keeps prezto's value.
+export LESS='-g -i -M -R -S -w -X'
+
+{{ end -}}
 # History configuration
 HISTSIZE=50000
 SAVEHIST=50000
@@ -81,9 +86,14 @@ alias brewup="brew update && brew bundle --file ~/.config/darwin/Brewfile"
 export PATH="$HOME/.local/bin:$PATH"
 {{ end -}}
 
-# Editor - use helix everywhere
+# Editor - use helix everywhere (Homebrew ships `hx`, Arch ships `helix`).
+{{ if eq .chezmoi.os "darwin" -}}
 export EDITOR="hx"
 export VISUAL="hx"
+{{ else -}}
+export EDITOR="helix"
+export VISUAL="helix"
+{{ end -}}
 alias vim="nvim"
 alias vi="nvim"
 
@@ -478,4 +488,9 @@ export CONFLUENCE_API_TOKEN="{{ range (onepassword "i27kyta5ftoumy2jp2hqdespbm" 
 
 # Local bin (Claude)
 export PATH="$HOME/.local/bin:$PATH"
-{{- end -}}
+{{- end }}
+
+# ssh-agent socket for TTY logins; the -z guard leaves a forwarded agent alone.
+if [[ -z "$SSH_AUTH_SOCK" && -S "${XDG_RUNTIME_DIR:-/run/user/$UID}/ssh-agent.socket" ]]; then
+  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR:-/run/user/$UID}/ssh-agent.socket"
+fi
