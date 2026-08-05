@@ -1,37 +1,29 @@
-# CachyOS Optimized AUR Packages (via paru)
-# These packages are prioritized for CachyOS optimization
-
-# Essential AUR packages
-1password              # Password manager (native for browser integration)
-asdf-vm                # Extendable version manager (node, python, java, etc.)
-visual-studio-code-bin # VS Code (binary version)
-
-
+1password
+asdf-vm
+visual-studio-code-bin
 {{- if eq .proMachine "true" }}
-# Professional AUR packages
-google-chrome          # Google Chrome browser
-terraform-docs         # Generate documentation from Terraform modules
-tflint                 # Terraform linter
-infracost              # Cloud cost estimation for Terraform
-ngrok                  # Secure tunnels to localhost
-saml2aws               # AWS CLI authentication via SAML
-hcledit                # HCL editor for Terraform files
-jetbrains-toolbox      # JetBrains IDE manager
-datagrip               # Database IDE
-intellij-idea-ultimate-edition # Java IDE
-pgadmin4               # PostgreSQL administration
-headlamp-desktop       # Kubernetes web UI
+google-chrome
+terraform-docs
+tflint
+infracost
+ngrok
+saml2aws
+hcledit
+jetbrains-toolbox
+datagrip
+intellij-idea-ultimate-edition
+pgadmin4
+headlamp-desktop
 {{- else }}
-# Personal AUR packages
-discord                # Voice and text chat
-zola                   # Fast static site generator
+discord
+zola
 {{- end }}
-
-# GUI applications better from AUR
-kitty                  # GPU-accelerated terminal with great features
-librepods-git          # AirPods manager for Linux
-obsidian               # Knowledge management
-rofi-wayland           # Application launcher (Wayland compatible)
-vivaldi                # Feature-rich browser
-vivaldi-ffmpeg-codecs  # Video codec support for Vivaldi
-zen-browser-bin        # Privacy-focused browser
+kwin-effect-rounded-corners-git
+kvantum-theme-catppuccin-git
+kitty
+librepods-git
+obsidian
+rofi-wayland
+vivaldi
+vivaldi-ffmpeg-codecs
+zen-browser-bin

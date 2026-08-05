@@ -1,0 +1,125 @@
+/*
+ * Catppuccin Mocha Spotlight Theme for Rofi
+ * Inspired by macOS Spotlight with Catppuccin Mocha color palette
+ */
+
+* {
+    /* Catppuccin Mocha Colors */
+    bg:          #1E1E2E;
+    bg-alt:      #313244;
+    fg:          #CDD6F4;
+    fg-dim:      #6C7086;
+    accent:      #89B4FA;
+    urgent:      #F38BA8;
+    selected:    #45475A;
+
+    background-color: transparent;
+    text-color: @fg;
+    spacing: 0;
+}
+
+window {
+    background-color: @bg;
+    border: 2px;
+    border-color: @selected;
+    border-radius: 12px;
+    padding: 0;
+    width: 600px;
+    location: center;
+    anchor: center;
+    transparency: "real";
+}
+
+mainbox {
+    background-color: @bg;
+    border-radius: 12px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @bg;
+    padding: 16px 20px;
+    border: 0 0 1px 0;
+    border-color: @selected;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent;
+    padding: 0 12px 0 0;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search...";
+    placeholder-color: @fg-dim;
+}
+
+listview {
+    background-color: @bg;
+    padding: 8px 0;
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+    dynamic: true;
+    scrollbar: false;
+    cycle: true;
+}
+
+element {
+    background-color: transparent;
+    padding: 10px 20px;
+    spacing: 12px;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @fg;
+    border-radius: 8px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    text-color: @urgent;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+    text-color: @bg;
+}
+
+element-icon {
+    size: 24px;
+    padding: 0 8px 0 0;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+message {
+    background-color: @bg;
+    padding: 12px 20px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @fg-dim;
+}
+
+error-message {
+    background-color: @bg;
+    border-radius: 12px;
+    padding: 20px;
+}
