@@ -4,7 +4,12 @@
 
 set -euo pipefail
 
-if ! command -v hx &> /dev/null; then
+# Homebrew installs the binary as `hx`, the Arch/CachyOS package as `helix`.
+if command -v hx &> /dev/null; then
+    HELIX_BIN=hx
+elif command -v helix &> /dev/null; then
+    HELIX_BIN=helix
+else
     echo "helix not found, skipping LSP setup"
     exit 0
 fi
@@ -12,7 +17,14 @@ fi
 echo "Installing Helix language servers and formatters..."
 
 # Node-based LSPs and formatters (via asdf-managed npm)
-if command -v npm &> /dev/null; then
+if ! command -v npm &> /dev/null; then
+    echo "npm not found; install nodejs via asdf first (asdf set -u nodejs <version>)"
+elif ! [ -w "$(npm config get prefix)/lib/node_modules" ]; then
+    # A distro-packaged node puts the global prefix under /usr, which needs root.
+    # This script must not run as root, so skip rather than fail the whole apply.
+    echo "npm prefix $(npm config get prefix) is not writable; skipping global installs."
+    echo "  These expect an asdf-managed node: asdf plugin add nodejs && asdf set -u nodejs latest"
+else
     echo "Installing npm-based language servers..."
     npm install -g \
         typescript \
@@ -20,8 +32,6 @@ if command -v npm &> /dev/null; then
         prettier \
         vscode-langservers-extracted \
         yaml-language-server
-else
-    echo "npm not found; install nodejs via asdf first (asdf set -u nodejs <version>)"
 fi
 
 # Python LSPs (ruff assumed managed via asdf; basedpyright via pipx)
@@ -39,5 +49,5 @@ else
 fi
 
 echo ""
-echo "Run 'hx --health <lang>' to verify each language (typescript, python, terraform, markdown, yaml, toml)."
+echo "Run '$HELIX_BIN --health <lang>' to verify each language (typescript, python, terraform, markdown, yaml, toml)."
 echo "Done!"

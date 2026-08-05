@@ -12,22 +12,28 @@ fonts
 docs
 
 # OS-conditional ignores
+# NOTE: patterns match target paths relative to $HOME, not source filenames.
 {{ if ne .chezmoi.os "darwin" }}
-private_dot_config/darwin/
-run_once_after_10-macos-packages.sh.tmpl
-run_once_after_20-configure-macos.sh.tmpl
-run_once_before_10-install-homebrew.sh.tmpl
-run_once_before-9-install-rosetta.sh.tmpl
+.amethyst.yml
+.config/darwin
+10-macos-packages.sh
+20-configure-macos.sh
+10-install-homebrew.sh
+before-9-install-rosetta.sh
 update_brewfile.sh
-update_brewfile.sh.tmpl
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
-private_dot_config/linux/
-run_once_before_09-setup-paru.sh.tmpl
-run_once_before_10-install-1password-cli.sh.tmpl
-run_once_after_10-linux-packages.sh.tmpl
-run_once_after_20-install-paru-packages.sh.tmpl
-run_once_after_25-install-prezto-linux.sh.tmpl
-run_once_after_40-setup-flatpak.sh.tmpl
+.config/linux
+.config/kde
+.config/rofi
+.config/environment.d
+.local/bin/rofi-toggle
+09-setup-paru.sh
+10-install-1password-cli.sh
+10-linux-packages.sh
+20-install-paru-packages.sh
+25-install-prezto-linux.sh
+40-setup-flatpak.sh
+50-setup-kde-theme.sh
 {{ end }}
