@@ -5,8 +5,10 @@
 
 {{- $proMachine := promptBoolOnce . "proMachine" "Professional Machine" -}}
 {{- $proEmail := "" }}
+{{- $proOnePasswordAccount := "" }}
 {{- if $proMachine -}}
 {{- $proEmail = promptStringOnce . "proEmail" "Pro Email address" -}}
+{{- $proOnePasswordAccount = promptStringOnce . "proOnePasswordAccount" "Work 1Password account URL (e.g. acme.1password.eu, empty for none)" -}}
 {{ end -}}
 
 {{- $workspaceDir := promptStringOnce . "workspaceDir" "Workspace Directory (for worktrees, etc.)" -}}
@@ -17,4 +19,5 @@
   email = {{ $email | quote }}
   proMachine = {{ $proMachine | quote }}
   proEmail = {{ $proEmail | quote }}
+  proOnePasswordAccount = {{ $proOnePasswordAccount | quote }}
   workspaceDir = {{ $workspaceDir | quote }}

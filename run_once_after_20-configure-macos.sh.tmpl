@@ -151,7 +151,9 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Mail
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>`
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+# Mail's prefs live in a sandboxed container; writing them needs Full Disk Access for the terminal
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false 2>/dev/null \
+	|| echo "WARNING: Could not set Mail preferences; grant your terminal Full Disk Access and re-run."
 
 # Terminal
 # Only use UTF-8

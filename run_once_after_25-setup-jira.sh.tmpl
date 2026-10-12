@@ -3,7 +3,7 @@
 {{ template "script_darwin_only" . }}
 {{ template "script_no_root" . }}
 
-{{- if eq .proMachine "true" }}
+{{- if and (eq .proMachine "true") (get . "proOnePasswordAccount") }}
 set -euo pipefail
 
 if ! command -v jira &> /dev/null; then

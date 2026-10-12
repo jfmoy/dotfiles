@@ -17,6 +17,10 @@ brew update
 echo "Upgrading Homebrew packages..."
 brew upgrade
 
+# Trust third-party taps so Homebrew will load their formulae/casks
+echo "Trusting taps..."
+grep -E '^[[:space:]]*tap ' ~/.config/darwin/Brewfile | sed -E 's/^[[:space:]]*tap "([^"]+)".*/\1/' | xargs -n1 brew trust --tap
+
 # Apply common Brewfile
 echo "Applying common packages..."
 brew bundle --verbose --file=~/.config/darwin/Brewfile || true

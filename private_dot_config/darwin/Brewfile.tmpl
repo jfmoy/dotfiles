@@ -1,6 +1,3 @@
-# Versent Homebrew Tap
-tap "versent/taps"
-
 # Common CLI tools
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat", greedy: true
@@ -137,20 +134,16 @@ mas "Amphetamine", id: 937984704
 # Video editing software
 mas "iMovie", id: 408981434
 # Presentation software
-mas "Keynote", id: 409183694
+mas "Keynote", id: 361285480
 # Spreadsheet software
-mas "Numbers", id: 409203825
+mas "Numbers", id: 361304891
 # Word processor
-mas "Pages", id: 409201541 
+mas "Pages", id: 361309726
 
 
 {{- if eq .proMachine "true" -}}
-# Phrase Homebrew Tap
-tap "phrase/brewed"
 # HCL editor tap
 tap "minamijoyo/hcledit"
-# Terraform
-tap "hashicorp/tap"
 
 # Pro-specific CLI tools
 # Extendable version manager with support for multiple languages
@@ -181,10 +174,6 @@ cask "meetingbar", greedy: true
 cask "ngrok", greedy: true
 # User interface to the TELNET protocol
 brew "telnet", greedy: true
-# Tool to build, change, and version infrastructure
-brew "hashicorp/tap/terraform", greedy: true
-# Terraform LSP server
-brew "hashicorp/tap/terraform-ls", greedy: true
 # Git hook scripts to identify and fix issues before submission
 brew "pre-commit", greedy: true
 # Generate documentation from Terraform modules

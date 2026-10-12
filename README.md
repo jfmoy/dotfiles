@@ -42,7 +42,6 @@ Personal macOS configuration managed with [chezmoi](https://www.chezmoi.io/).
 - **direnv** - Per-directory environment variables
 - **docker** - Containerization
 - **kubectl** & **helm** - Kubernetes tools
-- **terraform** - Infrastructure as code
 - **httpie** - API testing
 - **just** - Command runner
 - **gh** - GitHub CLI

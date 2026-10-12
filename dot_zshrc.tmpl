@@ -480,11 +480,13 @@ if command -v saml2aws &> /dev/null; then
   alias oktaws='saml2aws login --profile=default && eval $(saml2aws script --profile=default)'
 fi
 
+{{ if get . "proOnePasswordAccount" -}}
 # Jira CLI
-export JIRA_API_TOKEN="{{ range (onepassword "5irl6g7jmqdyu7ec6hgbtao4tm" "u4jdzrotkwefi6bruy57hqcjne" "alpacap.1password.eu").fields -}}{{ if (eq .label "Token") -}}{{ .value }}{{ end -}}{{ end }}"
+export JIRA_API_TOKEN="{{ range (onepassword "5irl6g7jmqdyu7ec6hgbtao4tm" "u4jdzrotkwefi6bruy57hqcjne" $.proOnePasswordAccount).fields -}}{{ if (eq .label "Token") -}}{{ .value }}{{ end -}}{{ end }}"
 
 # Confluence CLI
-export CONFLUENCE_API_TOKEN="{{ range (onepassword "i27kyta5ftoumy2jp2hqdespbm" "u4jdzrotkwefi6bruy57hqcjne" "alpacap.1password.eu").fields -}}{{ if (eq .label "Token") -}}{{ .value }}{{ end -}}{{ end }}"
+export CONFLUENCE_API_TOKEN="{{ range (onepassword "i27kyta5ftoumy2jp2hqdespbm" "u4jdzrotkwefi6bruy57hqcjne" $.proOnePasswordAccount).fields -}}{{ if (eq .label "Token") -}}{{ .value }}{{ end -}}{{ end }}"
+{{ end -}}
 
 # Local bin (Claude)
 export PATH="$HOME/.local/bin:$PATH"
