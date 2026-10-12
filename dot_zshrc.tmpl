@@ -474,12 +474,6 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # direnv
 eval "$(direnv hook zsh)"
 
-# saml2aws completions and alias
-if command -v saml2aws &> /dev/null; then
-  eval "$(saml2aws --completion-script-zsh)"
-  alias oktaws='saml2aws login --profile=default && eval $(saml2aws script --profile=default)'
-fi
-
 {{ if get . "proOnePasswordAccount" -}}
 # Jira CLI
 export JIRA_API_TOKEN="{{ range (onepassword "5irl6g7jmqdyu7ec6hgbtao4tm" "u4jdzrotkwefi6bruy57hqcjne" $.proOnePasswordAccount).fields -}}{{ if (eq .label "Token") -}}{{ .value }}{{ end -}}{{ end }}"
