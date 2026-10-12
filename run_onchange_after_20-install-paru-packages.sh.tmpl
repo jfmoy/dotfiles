@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Re-run whenever the Parufile changes: Parufile hash {{ includeTemplate "private_dot_config/linux/Parufile.tmpl" . | sha256sum }}
 
 {{ template "script_linux_only" . }}
 

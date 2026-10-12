@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Re-run whenever the Flatpakfile changes: Flatpakfile hash {{ includeTemplate "private_dot_config/linux/Flatpakfile.tmpl" . | sha256sum }}
 
 {{ template "script_linux_only" . }}
 
