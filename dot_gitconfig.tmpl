@@ -39,6 +39,10 @@
   email = "{{ .email }}"
 {{- end }}
 
+# Dotfiles repo is public: always commit there with the GitHub noreply address
+[includeIf "gitdir:{{ .chezmoi.sourceDir }}/"]
+  path = ~/.config/git/dotfiles.inc
+
 [diff]
   algorithm = histogram
   indentHeuristic = on
