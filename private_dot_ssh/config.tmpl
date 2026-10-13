@@ -33,30 +33,6 @@ Host *
   Compression yes
 {{- end }}
 
-{{ if eq .proMachine "true" }}
-Host {{ range (onepassword "uk7kke52vbzvtylpjjqtjpylg4" "" "my.1password.com").fields -}}
-  {{ if and (eq .label "name") -}}
-  {{   .value -}}
-  {{ end -}}
-  {{ end }}
-   User {{ range (onepassword "uk7kke52vbzvtylpjjqtjpylg4" "" "my.1password.com").fields -}}
-  {{ if and (eq .label "username") -}}
-  {{   .value -}}
-  {{ end -}}
-  {{ end }}
-   Hostname {{ range (onepassword "uk7kke52vbzvtylpjjqtjpylg4" "" "my.1password.com").fields -}}
-  {{ if and (eq .label "url") -}}
-  {{   .value -}}
-  {{ end -}}
-  {{ end }}
-   RemoteCommand cd {{ range (onepassword "uk7kke52vbzvtylpjjqtjpylg4" "" "my.1password.com").fields -}}
-  {{ if and (eq .label "path") -}}
-  {{   .value -}}
-  {{ end -}}
-  {{ end }} && exec bash --login
-   RequestTTY yes
-{{- end }}
-
 Host github.com
   User git
   IdentityFile ~/.ssh/id_rsa
