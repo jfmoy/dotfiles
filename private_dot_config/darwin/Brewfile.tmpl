@@ -101,7 +101,7 @@ cask "gimp", greedy: true
 # File archiver
 cask "keka", greedy: true
 # Open-source Markdown editor
-cask "macdown", greedy: true
+cask "macdown-3000", greedy: true
 # RSS Reader
 cask "netnewswire", greedy: true
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -146,16 +146,16 @@ mas "Pages", id: 361309726
 tap "minamijoyo/hcledit"
 
 # Pro-specific CLI tools
-# Extendable version manager with support for multiple languages
-brew "asdf", greedy: true
+# Polyglot runtime manager (node, python, ...)
+brew "mise", greedy: true
 # Official Amazon AWS command-line interface
 brew "awscli", greedy: true
 # Load and unload environment variables based on current directory
 brew "direnv", greedy: true
-# Pack, ship and run any application as a lightweight container
-brew "docker", greedy: true
-# Isolated development environments using Docker
-brew "docker-compose", greedy: true
+# Docker Desktop (daemon + docker CLI + compose v2 plugin)
+cask "docker-desktop", greedy: true
+# Postgres client tools (psql, pg_isready)
+brew "libpq", greedy: true
 # Github CLI
 brew "gh", greedy: true
 # Kubernetes package manager
@@ -186,8 +186,6 @@ brew "telnet", greedy: true
 brew "pre-commit", greedy: true
 # Generate documentation from Terraform modules
 brew "terraform-docs", greedy: true
-# Terraform linter for detecting errors and best practices
-brew "tflint", greedy: true
 # HCL editor - Editor for HCL files
 brew "minamijoyo/hcledit/hcledit", greedy: true
 
