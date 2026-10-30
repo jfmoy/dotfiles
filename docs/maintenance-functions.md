@@ -110,6 +110,10 @@ update-all
 - Shows current version
 - Reminds you to upgrade via brew
 
+**Claude Code hook:**
+- Runs `check-agent-summary-hook`: checks that `~/.local/share/no-agent-summary.js` still loads in the upgraded `claude` and that its anchor is still in the binary
+- Prints FAIL and the gist link when an upgrade breaks it, since the hook fails open
+
 ### When to use
 
 - Weekly or bi-weekly

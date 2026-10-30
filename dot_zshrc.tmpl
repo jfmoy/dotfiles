@@ -97,6 +97,14 @@ alias vi="nvim"
 export WORKSPACE_DIR="{{ .workspaceDir }}"
 export WORKTREE_BASE_DIR="${WORKSPACE_DIR}/worktrees"
 
+# Claude Code: switch off the agent_summary side-queries (hook pinned in .chezmoiexternal.toml).
+# Bun reads BUN_OPTIONS, so every Claude Code process preloads the hook. Re-check after upgrades
+# with check-agent-summary-hook.
+NO_AGENT_SUMMARY_HOOK="$HOME/.local/share/no-agent-summary.js"
+if [[ -f "$NO_AGENT_SUMMARY_HOOK" && " ${BUN_OPTIONS-} " != *" --preload=$NO_AGENT_SUMMARY_HOOK "* ]]; then
+  export BUN_OPTIONS="${BUN_OPTIONS:+$BUN_OPTIONS }--preload=$NO_AGENT_SUMMARY_HOOK"
+fi
+
 # Init starship
 eval "$(starship init zsh)"
 
@@ -320,7 +328,42 @@ update-all() {
     starship --version
   fi
 
+  # Claude Code hook
+  echo "\nChecking the no-agent-summary hook..."
+  check-agent-summary-hook
+
   echo "\nAll updates complete!"
+}
+
+# Check the no-agent-summary hook still loads and its anchor is still in the claude binary.
+# The hook fails open: if an upgrade renames the anchor, summaries silently come back.
+check-agent-summary-hook() {
+  if ! command -v claude &> /dev/null || [[ ! -f "$NO_AGENT_SUMMARY_HOOK" ]]; then
+    echo "claude or $NO_AGENT_SUMMARY_HOOK not found, skipping"
+    return 0
+  fi
+
+  local bin="${commands[claude]:A}"
+  local log="$(mktemp)"
+  local version="$(BUN_OPTIONS="--preload=$NO_AGENT_SUMMARY_HOOK" CC_AGENT_SUMMARY_LOG="$log" claude --version)"
+  local ok=1
+
+  if ! grep -q "preload active mode=off" "$log"; then
+    echo "FAIL: the hook did not load in $version"
+    ok=0
+  fi
+  if ! grep -qaF "[AgentSummary] Timer fired" "$bin"; then
+    echo "FAIL: anchor '[AgentSummary] Timer fired' not found in $bin"
+    ok=0
+  fi
+  rm -f "$log"
+
+  if (( ok )); then
+    echo "OK: no-agent-summary hook active for $version"
+  else
+    echo "Check https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce for a new revision"
+    return 1
+  fi
 }
 
 # Quick git repo maintenance
